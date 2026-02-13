@@ -1,7 +1,7 @@
 +## Visão do projeto 
 +O **EFC App** é um projeto real de portfólio com foco em aprendizado prático de React. 
 +A proposta é construir uma aplicação para organizar a vida pessoal em um único lugar, incluindo: 
-+- ritmo de atividades e produtividade; 
++- ritmo de atividades e produtividade;  
 +- controle financeiro pessoal; 
 +- acompanhamento de hábitos e metas.  
  
