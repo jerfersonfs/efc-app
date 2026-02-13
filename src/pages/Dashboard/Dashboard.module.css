@@ -1,0 +1,33 @@
+.dashboardPage {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  background-color: #f2f5fa;
+}
+
+.dashboardMain {
+  padding: 1.25rem;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.logoutButton {
+  margin-top: 1.25rem;
+  border: 1px solid #c3cede;
+  background-color: #ffffff;
+  color: #233046;
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+  font-weight: 600;
+}
+
+@media (max-width: 920px) {
+  .dashboardPage {
+    grid-template-columns: 1fr;
+  }
+}
