@@ -1,14 +1,15 @@
 const menuItems = [
-  { id: 'dashboard', label: 'Dashboard' },
-  { id: 'activities', label: 'Atividades' },
-  { id: 'finance', label: 'Finanças' },
-  { id: 'habits', label: 'Hábitos' },
+  { id: 'dashboard', label: 'Dashboard',link: './../pages/Dashboard/Dashboard' },
+  { id: 'activities', label: 'Atividades', link: './../pages/Activities/Activities'  },
+  { id: 'finance', label: 'Finanças' ,link: './../pages/Money/Money' },
+  { id: 'habits', label: 'Hábitos', link: './../pages/Habits/Habits'  },
 ]
 
 function Sidebar() {
   return (
     <aside className="sidebar">
-      <p className="sidebar__brand">EFC App</p>
+      <p className="sidebar__brand">EFC</p>
+      {/* Inserir subtitulo nessa parte */}
       <nav aria-label="Navegação principal">
         <ul className="sidebar__menu">
           {menuItems.map((item) => (

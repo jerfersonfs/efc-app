@@ -1,16 +1,27 @@
-# React + Vite
+## Visão do projeto 
+O **EFC App** é um projeto real de portfólio com foco em aprendizado prático de React.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A proposta é construir uma aplicação para organizar a vida pessoal em um único lugar, incluindo: 
 
-Currently, two official plugins are available:
+- ritmo de atividades e produtividade;  
+- controle financeiro pessoal; 
+- acompanhamento de hábitos e metas.  
+ 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Objetivos  
 
-## React Compiler
+- Evoluir habilidades de front-end com React e Vite.  
+- Construir funcionalidades com mentalidade de produto real.  
+- Registrar decisões técnicas para mostrar maturidade em portfólio.  
+  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Público e problema  
 
-## Expanding the ESLint configuration
+Muitas pessoas usam vários apps separados para rotina, tarefas e finanças. O EFC App busca centralizar esse controle em uma experiência simples e objetiva.   
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Escopo inicial (MVP)  
+
+- Dashboard com resumo do dia/semana.
+- Lançamento de receitas e despesas.  
+- Lista de atividades com status e prioridade.  
+- Indicadores básicos (saldo mensal, tarefas concluídas, sequência de hábitos).  

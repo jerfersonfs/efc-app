@@ -7,7 +7,7 @@ const cards = [
   {
     title: 'Saldo do mês',
     value: 'R$ 4.250,00',
-    description: 'Receitas - despesas (dados mockados)',
+    description: 'Receitas - despesas',
   },
   {
     title: 'Atividades concluídas',
@@ -20,6 +20,9 @@ const cards = [
     description: 'Rotina matinal ativa',
   },
 ]
+const filter = []
+// Inserir um dropdown com a opção de selecionar quantidade ou pesquisa específica
+// Inserir um segundo dropdown com opção de selecionar anos, meses ou dias
 
 function Dashboard({ onNavigate }) {
   return (
@@ -29,7 +32,7 @@ function Dashboard({ onNavigate }) {
       <main className={styles.dashboardMain}>
         <Header
           title="Dashboard"
-          subtitle="Resumo rápido da sua organização pessoal"
+          subtitle={`Seu controle de nos últimos${filter}`} 
         />
 
         <section className={styles.cardsGrid}>
