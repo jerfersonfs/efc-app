@@ -1,9 +1,13 @@
+import { useNavigate } from 'react-router-dom'
+import { ROUTES } from '../../routes/routes'
 import styles from './Login.module.css'
 
-function Login({ onNavigate }) {
+function Login() {
+  const navigate = useNavigate()
+
   const handleSubmit = (event) => {
     event.preventDefault()
-    onNavigate('/dashboard')
+    navigate(ROUTES.DASHBOARD)
   }
 
   return (

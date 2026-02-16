@@ -1,22 +1,22 @@
-const menuItems = [
-  { id: 'dashboard', label: 'Dashboard',link: './../pages/Dashboard/Dashboard' },
-  { id: 'activities', label: 'Atividades', link: './../pages/Activities/Activities'  },
-  { id: 'finance', label: 'Finanças' ,link: './../pages/Money/Money' },
-  { id: 'habits', label: 'Hábitos', link: './../pages/Habits/Habits'  },
-]
+import { NavLink } from 'react-router-dom'
+import { SIDEBAR_ROUTES } from '../../routes/routeConfig'
 
 function Sidebar() {
   return (
     <aside className="sidebar">
-      <p className="sidebar__brand">EFC</p>
-      {/* Inserir subtitulo nessa parte */}
+      <p className="sidebar__brand">EFC App</p>
       <nav aria-label="Navegação principal">
         <ul className="sidebar__menu">
-          {menuItems.map((item) => (
+          {SIDEBAR_ROUTES.map((item) => (
             <li key={item.id} className="sidebar__item">
-              <button type="button" className="sidebar__link">
+              <NavLink
+                to={item.path}
+                className={({ isActive }) =>
+                  `sidebar__link ${isActive ? 'sidebar__link--active' : ''}`
+                }
+              >
                 {item.label}
-              </button>
+              </NavLink>
             </li>
           ))}
         </ul>

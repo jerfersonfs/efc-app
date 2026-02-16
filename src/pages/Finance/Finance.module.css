@@ -1,0 +1,88 @@
+.container {
+  display: grid;
+  gap: 1rem;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+
+.card {
+  border: 1px solid #d8dce3;
+  border-radius: 12px;
+  padding: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 8px 30px rgba(17, 24, 39, 0.06);
+}
+
+.card p {
+  margin: 0;
+  color: #607387;
+}
+
+.card strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 1.35rem;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 160px 1fr 180px auto;
+  gap: 0.6rem;
+  margin-top: 0.7rem;
+}
+
+.form input,
+.form select,
+.form button {
+  border: 1px solid #c8d0dd;
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+}
+
+.form button {
+  border: 0;
+  background-color: #2a5bd7;
+  color: #ffffff;
+}
+
+.list {
+  list-style: none;
+  margin: 0.7rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.item {
+  border: 1px solid #e1e7f0;
+  border-radius: 8px;
+  padding: 0.6rem 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category {
+  margin: 0;
+  font-weight: 600;
+}
+
+.income {
+  color: #0a8f51;
+  font-weight: 700;
+}
+
+.expense {
+  color: #be1d2e;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+}

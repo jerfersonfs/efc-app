@@ -1,15 +1,11 @@
-import { useState,useEffect, useMemo } from 'react'
-import Dashboard from './pages/Dashboard/Dashboard'
 import Login from './pages/Login/Login'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import { ROUTES} from './routes/routes'
 import './App.css'
+import AppLayout from './layouts/AppLayout'
+import { ROUTE_COMPONENTS } from './routes/routeConfig'
 
-const VALID_ROUTES = ['/login', '/dashboard']
-
-function normalizePath(pathname) {
-  return VALID_ROUTES.includes(pathname) ? pathname : '/login'
-}
-
-function navigateTo(pathname, setPathname) {
+/*function navigateTo(pathname, setPathname) {
   const normalized = normalizePath(pathname)
 
   if (normalized !== window.location.pathname) {
@@ -17,37 +13,26 @@ function navigateTo(pathname, setPathname) {
   }
 
   setPathname(normalized)
-}
-
+}*/
 
 function App() {
-  const [pathname, setPathname] = useState(() => normalizePath(window.location.pathname))
 
-  useEffect(() => {
-    if (!VALID_ROUTES.includes(window.location.pathname)) {
-      window.history.replaceState({}, '', '/login')
-    }
+return(
+  <Routes>
+      <Route path={ROUTES.LOGIN} element={<Login />} />
 
-    const handlePopState = () => {
-      setPathname(normalizePath(window.location.pathname))
-    }
+      <Route element={<AppLayout />}>
+        {ROUTE_COMPONENTS.map((route) => (
+          <Route
+            key={route.path}
+            path={route.path}
+            element={<route.component />}
+          />
+        ))}
+      </Route>
 
-    window.addEventListener('popstate', handlePopState)
-
-    return () => {
-      window.removeEventListener('popstate', handlePopState)
-    }
-  }, [])
-
-  const route = useMemo(() => {
-    if (pathname === '/dashboard') {
-      return <Dashboard onNavigate={(nextPath) => navigateTo(nextPath, setPathname)} />
-    }
-
-    return <Login onNavigate={(nextPath) => navigateTo(nextPath, setPathname)} />
-  }, [pathname])
-
-  return <div className="app">{route}</div>
-}
+      <Route path="*" element={<Navigate to={ROUTES.LOGIN} replace />} />
+    </Routes>
+)}
 
 export default App
