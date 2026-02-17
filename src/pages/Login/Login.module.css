@@ -2,52 +2,162 @@
   min-height: 100vh;
   display: grid;
   place-items: center;
-  background: linear-gradient(145deg, #eef2ff 0%, #f8fafc 45%, #f3f4f6 100%);
+  background: #dfe3eb;
   padding: 1.5rem;
 }
 
-.loginCard {
-  width: min(420px, 100%);
-  background-color: #ffffff;
-  border: 1px solid #d9e0ea;
-  border-radius: 14px;
-  padding: 1.5rem;
-  box-shadow: 0 12px 30px rgba(16, 27, 45, 0.1);
+.loginShell {
+  width: min(1080px, 100%);
+  min-height: 720px;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(17, 24, 39, 0.12);
 }
 
-.loginCard h1 {
+.welcomePanel {
+  position: relative;
+  background: linear-gradient(180deg, #0f172a 0%, #17223a 55%, #1d2940 100%);
+}
+
+.welcomeContent {
+  position: relative;
+  z-index: 2;
+  color: #eef3ff;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  min-height: 100%;
+  padding: 2.4rem;
+}
+
+.logo {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 4rem;
+  line-height: 1;
 }
 
-.loginCard p {
-  margin: 0.35rem 0 1.2rem;
-  color: #5a6a7a;
+.welcomeContent h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.welcomeContent p {
+  margin: 0;
+  font-size: 1.55rem;
+  color: rgba(219, 227, 244, 0.95);
+}
+
+.blob {
+  position: absolute;
+  border-radius: 34px;
+  background: rgba(140, 166, 212, 0.16);
+}
+
+.blobTop {
+  width: 220px;
+  height: 220px;
+  top: 0;
+  left: -35px;
+}
+
+.blobMid {
+  width: 160px;
+  height: 160px;
+  top: 120px;
+  left: -20px;
+}
+
+.blobBottom {
+  width: 170px;
+  height: 170px;
+  right: 20px;
+  bottom: 45px;
+}
+
+.formPanel {
+  background-color: #f4f6fa;
+  padding: 3rem 2.2rem;
+  display: grid;
+  align-content: center;
+}
+
+.formPanel h2 {
+  margin: 0;
+  text-align: center;
+  font-size: 3rem;
+  color: #0f172a;
+}
+
+.formSubtitle {
+  margin: 0.5rem 0 1.5rem;
+  text-align: center;
+  color: #607387;
+  font-size: 1.25rem;
 }
 
 .form {
   display: grid;
-  gap: 0.65rem;
-}
-
-.form label {
-  font-size: 0.9rem;
-  font-weight: 600;
+  gap: 0.8rem;
 }
 
 .form input {
-  border: 1px solid #c8d0dd;
-  border-radius: 10px;
-  padding: 0.7rem 0.8rem;
-  font-size: 0.95rem;
+  border: 1px solid #d1d9e6;
+  border-radius: 20px;
+  padding: 0.9rem 1rem;
+  background: #ffffff;
+  font-size: 1rem;
 }
 
-.form button {
-  margin-top: 0.5rem;
+.continueButton {
+  margin-top: 0.35rem;
   border: 0;
-  border-radius: 10px;
-  background-color: #2a5bd7;
+  border-radius: 20px;
+  padding: 0.9rem 1rem;
   color: #ffffff;
-  padding: 0.75rem 0.9rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  background: linear-gradient(90deg, #1d2940 0%, #2a5bd7 100%);
+}
+
+.divider {
+  margin: 1.1rem 0 0.8rem;
+  text-align: center;
+  color: #607387;
+  font-size: 0.9rem;
+}
+
+.socialButton {
+  border: 0;
+  border-radius: 20px;
+  padding: 0.8rem 1rem;
+  color: #ffffff;
+  margin-top: 0.65rem;
   font-weight: 600;
+}
+
+.google {
+  background: linear-gradient(90deg, #ecebeb 0%, #ecebeb 100%);
+  color:#8d8d8d;
+}
+
+.facebook {
+  background: linear-gradient(90deg, #2e76d2 0%, #3f8fe4 100%);
+}
+
+@media (max-width: 960px) {
+  .loginShell {
+    grid-template-columns: 1fr;
+  }
+
+  .welcomeContent h1 {
+    font-size: 2.2rem;
+  }
+
+  .welcomeContent p,
+  .formSubtitle {
+    font-size: 1rem;
+  }
 }
