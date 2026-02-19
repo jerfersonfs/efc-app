@@ -2,6 +2,19 @@
   display: grid;
   gap: 1rem;
 }
+.headerActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.toggleValuesButton {
+  border: 1px solid #c8d0dd;
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+  background-color: #ffffff;
+  color: #233046;
+  font-weight: 600;
+}
 
 .summaryGrid {
   display: grid;
@@ -78,6 +91,10 @@
 
 .expense {
   color: #be1d2e;
+  font-weight: 700;
+}
+.investment {
+  color: #cc9b16;
   font-weight: 700;
 }
 

@@ -1,4 +1,4 @@
-.info-card {
+.card {
   border: 1px solid #d8dce3;
   border-radius: 12px;
   padding: 1rem;
@@ -6,21 +6,30 @@
   box-shadow: 0 8px 30px rgba(17, 24, 39, 0.06);
 }
 
-.info-card__title {
+.title {
   margin: 0 0 0.35rem;
   font-size: 0.95rem;
   color: #516172;
 }
 
-.info-card__value {
+.value {
   margin: 0;
   font-size: 1.8rem;
   font-weight: 700;
   color: #101b2d;
 }
 
-.info-card__description {
+.description {
   margin: 0.4rem 0 0;
   font-size: 0.9rem;
   color: #5d6f83;
+}
+
+.actionLink {
+  display: inline-block;
+  margin-top: 0.85rem;
+  text-decoration: none;
+  color: #2a5bd7;
+  font-size: 0.9rem;
+  font-weight: 600;
 }

@@ -3,6 +3,7 @@ export const ROUTES = {
   DASHBOARD: '/dashboard',
   ACTIVITIES: '/activities',
   FINANCE: '/finance',
+  FINANCE_DETAILS: '/finance/details/:section',
   HABITS: '/habits',
 }
 

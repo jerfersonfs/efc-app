@@ -1,0 +1,25 @@
+.container {
+  border: 1px solid #d8dce3;
+  border-radius: 12px;
+  padding: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 8px 30px rgba(17, 24, 39, 0.06);
+}
+
+.container h2 {
+  margin: 0 0 0.45rem;
+  color: #0f172a;
+}
+
+.container p {
+  margin: 0;
+  color: #5d6f83;
+}
+
+.backLink {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #2a5bd7;
+  font-weight: 600;
+  text-decoration: none;
+}

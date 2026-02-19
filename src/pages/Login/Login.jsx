@@ -21,8 +21,8 @@ function Login() {
 
           <div className={styles.welcomeContent}>
             <p className={styles.logo}><img src={logo} alt="" /></p>
-            <h1>Bem vindo ao ELC</h1>
-            <p>Sua melhor performance e controle de vida está aqui</p>
+            <h1>Bem-vindo ao ELC</h1>
+            <p>Seu controle de vida eficiente está aqui</p>
           </div>
         </div>
 
@@ -31,7 +31,7 @@ function Login() {
           <p className={styles.formSubtitle}>Cadastre-se para ter a melhor performance e controle de sua vida</p>
 
           <form onSubmit={handleSubmit} className={styles.form}>
-            <input id="email" type="email" placeholder="Email" required />
+            <input id="email" type="email" placeholder="E-mail" required />
             <input id="password" type="password" placeholder="Senha" required />
             <button type="submit" className={styles.continueButton}>
               CONTINUE →

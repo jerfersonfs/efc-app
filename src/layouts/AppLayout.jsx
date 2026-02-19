@@ -5,7 +5,13 @@ import { ROUTE_META } from '../routes/routeConfig'
 
 export default function AppLayout() {
   const location = useLocation()
-  const meta = ROUTE_META[location.pathname] ?? {}
+
+  const financeDetailMeta = {
+    title: 'Detalhes financeiros',
+    subtitle: 'Acompanhe informações específicas de cada indicador',
+  }
+
+  const meta = ROUTE_META[location.pathname] ?? (location.pathname.startsWith('/finance/details/') ? financeDetailMeta :{})
 
   return (
     <div className="app">
