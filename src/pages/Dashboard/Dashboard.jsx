@@ -54,9 +54,10 @@ function Dashboard() {
       <section className={styles.lineChart}>
           <LineChart
             title="Eficiência Mensal"
-            value={lineChartData}
+            data={lineChartData}
             xKey="month"
             lineKey="eficiencia"
+            lineKey2="meta"
             height={300}
             width="100%"
           />

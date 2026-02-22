@@ -4,12 +4,34 @@
   padding: 1rem;
   background-color: #ffffff;
   box-shadow: 0 8px 30px rgba(17, 24, 39, 0.06);
+  display: grid;
+  gap: 0.5rem;
+}
+
+.compact {
+  gap: 0.35rem;
+}
+
+.header {
+  display: grid;
+  gap: 0.2rem;
 }
 
 .title {
-  margin: 0 0 0.35rem;
+  margin: 0;
   font-size: 0.95rem;
   color: #516172;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #7a8ca1;
+}
+
+.body {
+  display: grid;
+  gap: 0.35rem;
 }
 
 .value {
@@ -20,14 +42,17 @@
 }
 
 .description {
-  margin: 0.4rem 0 0;
+  margin: 0;
   font-size: 0.9rem;
   color: #5d6f83;
 }
 
+.footer {
+  margin-top: 0.2rem;
+}
+
 .actionLink {
   display: inline-block;
-  margin-top: 0.85rem;
   text-decoration: none;
   color: #2a5bd7;
   font-size: 0.9rem;

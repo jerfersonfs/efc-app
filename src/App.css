@@ -95,3 +95,78 @@
 .sidebar__link--active{
   border: 1px solid #ffffff ;
 }
+.profile-menu {
+  position: relative;
+}
+
+.profile-menu__trigger {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 0;
+  background-color: #111827;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.profile-menu__dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: 280px;
+  border: 1px solid #d8dce3;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 16px 40px rgba(17, 24, 39, 0.12);
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.profile-menu:hover .profile-menu__dropdown,
+.profile-menu:focus-within .profile-menu__dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.profile-menu__identity {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #e4e9f2;
+}
+
+.profile-menu__name {
+  margin: 0;
+  font-weight: 700;
+  color: #111827;
+}
+
+.profile-menu__email {
+  margin: 0.2rem 0 0;
+  font-size: 0.85rem;
+  color: #607387;
+}
+
+.profile-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0.4rem 0;
+}
+
+.profile-menu__item {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  padding: 0.6rem 1rem;
+  color: #1f2937;
+  cursor: pointer;
+}
+
+.profile-menu__item:hover {
+  background-color: #f3f6fb;
+}

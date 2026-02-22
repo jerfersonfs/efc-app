@@ -1,12 +1,11 @@
 import { LineChart as RechartsLineChart,Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import Card from "../Card/Card";
 
-export default function LineChart({title, data =[], xKey,lineKey, height,width}){
+export default function LineChart({title, data =[], xKey,lineKey, lineKey2, height,width}){
     return(
         <Card>
-            <h1>{title}</h1>
-
-            <ResponsiveContainer width={width} height={height}>
+            <h2>{title}</h2>
+            <ResponsiveContainer width={width} height={height} >
                 <RechartsLineChart data={data}>
                     <XAxis dataKey={xKey}/>
                     <YAxis/>
@@ -16,9 +15,15 @@ export default function LineChart({title, data =[], xKey,lineKey, height,width})
                         dataKey={lineKey}
                         stroke="#1d2940"
                         strokeWidth={2}
-                        color="#9ba1ad"
                     />
-                </RechartsLineChart>
+                    <Line
+                        type="monotone"
+                        dataKey={lineKey2}
+                        stroke="#9ba1ad"
+                        strokeWidth={2}
+                        strokeDasharray="6 4"
+                    />
+                    </RechartsLineChart>
             </ResponsiveContainer>
         </Card>
     )

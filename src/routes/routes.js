@@ -5,5 +5,6 @@ export const ROUTES = {
   FINANCE: '/finance',
   FINANCE_DETAILS: '/finance/details/:section',
   HABITS: '/habits',
+  SETTINGS: '/settings'
 }
 

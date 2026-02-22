@@ -3,6 +3,7 @@ import Dashboard from '../pages/Dashboard/Dashboard'
 import Finance from '../pages/Finance/Finance'
 import FinanceDetail from '../pages/FinanceDetail/FinanceDetail'
 import Habits from '../pages/Habits/Habits'
+import  Settings  from '../pages/settings/Settings'
 import { ROUTES } from './routes'
 
 export const ROUTE_META = {
@@ -22,6 +23,10 @@ export const ROUTE_META = {
     title: 'Hábitos',
     subtitle: 'Acompanhe sua consistência diária',
   },
+  [ROUTES.SETTINGS]: {
+    title: 'Configurações',
+    subtitle: 'Suas configurações de usuário'
+  }
 }
 
 
@@ -31,6 +36,7 @@ export const ROUTE_COMPONENTS = [
   { path: ROUTES.FINANCE, component: Finance },
   { path: ROUTES.FINANCE_DETAILS, component: FinanceDetail},
   { path: ROUTES.HABITS, component: Habits },
+  { path: ROUTES.SETTINGS, component: Settings},
 ]
 
 export const SIDEBAR_ROUTES = [
