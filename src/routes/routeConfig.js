@@ -4,6 +4,7 @@ import Finance from '../pages/Finance/Finance'
 import FinanceDetail from '../pages/FinanceDetail/FinanceDetail'
 import Habits from '../pages/Habits/Habits'
 import  Settings  from '../pages/settings/Settings'
+import Profile from '../pages/Profile/Profile'
 import { ROUTES } from './routes'
 
 export const ROUTE_META = {
@@ -26,6 +27,10 @@ export const ROUTE_META = {
   [ROUTES.SETTINGS]: {
     title: 'Configurações',
     subtitle: 'Suas configurações de usuário'
+  },
+  [ROUTES.PROFILE]: {
+    title: 'Perfil do usuário',
+    subtitle: 'Seu perfil'
   }
 }
 
@@ -37,6 +42,7 @@ export const ROUTE_COMPONENTS = [
   { path: ROUTES.FINANCE_DETAILS, component: FinanceDetail},
   { path: ROUTES.HABITS, component: Habits },
   { path: ROUTES.SETTINGS, component: Settings},
+  { path: ROUTES.PROFILE, component: Profile}
 ]
 
 export const SIDEBAR_ROUTES = [

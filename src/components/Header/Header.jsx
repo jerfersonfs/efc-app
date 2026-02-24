@@ -10,11 +10,11 @@ function Header({ title, subtitle }) {
   }
 
   const headerMenuItemsMock = [
-    { id: 'profile', label: 'Meu perfil' },
+    { id: 'profile', label: 'Meu perfil', to: ROUTES.PROFILE },
     { id: 'settings', label: 'Configurações da conta', to: ROUTES.SETTINGS },
     { id: 'payment', label: 'Métodos de pagamento' },
     { id: 'support', label: 'Ajuda e suporte' },
-    { id: 'logout', label: 'Sair' },
+    { id: 'logout', label: 'Sair', to: ROUTES.LOGIN },
   ]
 
   const identityContent = (

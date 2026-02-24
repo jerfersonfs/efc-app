@@ -3,6 +3,7 @@ import Card from '../../components/Card/Card'
 import { ROUTES } from '../../routes/routes'
 import styles from './Dashboard.module.css'
 import LineChart from '../../components/LineChart/LineChart'
+import { Box} from '@mui/material'
 
 const cards = [
   {
@@ -41,7 +42,7 @@ function Dashboard() {
 
   return (
     <>
-      <section className={styles.cardsGrid}>
+      <Box variant="section" className={styles.cardsGrid}>
         {cards.map((card) => (
           <Card
             key={card.title}
@@ -50,8 +51,8 @@ function Dashboard() {
             description={card.description}
           />
         ))}
-      </section>
-      <section className={styles.lineChart}>
+      </Box>
+      <Box variant="section" className={styles.lineChart}>
           <LineChart
             title="Eficiência Mensal"
             data={lineChartData}
@@ -61,11 +62,7 @@ function Dashboard() {
             height={300}
             width="100%"
           />
-      </section>
-
-      <button type="button" className={styles.logoutButton} onClick={() => navigate(ROUTES.LOGIN)}>
-        Sair
-      </button>
+      </Box>
     </>
   )
 }
