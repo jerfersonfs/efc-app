@@ -6,14 +6,21 @@
 }
 .cardHead{
   height: 200px;
+  width: 520px;
 }
 
 .lineChart {
-  margin-top: 24px;
-  width: 1080px;
+  margin-top: 14px;
+  width: 1065px;
+}
+
+.chartsRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr;/*linha maior que donut*/ 
+  gap: 28px;
+  align-items: stretch;
 }
 
 .donut{
-  width: 180px;
-  height: 100;
+  margin-top: 14px;
 }

@@ -2,15 +2,9 @@ import { Link } from 'react-router-dom'
 import styles from './DropdownMenu.module.css'
 
 function DropdownMenu({
-  trigger,
-  ariaLabel,
-  menuLabel,
-  headerContent,
-  items = [],
-  width = '280px',
-  align = 'right',
-}) {
-  const alignClass = align === 'left' ? styles.alignLeft : styles.alignRight
+  trigger, ariaLabel, menuLabel, headerContent, items = [], width = '280px', align = 'right',}) {
+  
+    const alignClass = align === 'left' ? styles.alignLeft : styles.alignRight
 
   return (
     <div className={styles.menu} aria-label={ariaLabel}>

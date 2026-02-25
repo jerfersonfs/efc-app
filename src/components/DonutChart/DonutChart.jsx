@@ -14,16 +14,12 @@ const defaultColors = [
   "#F44336"
 ];
 
-function DonutChart({
-  data,
-  dataKey,
-  nameKey,
-  height ,
-  colors = defaultColors
-}) {
+function DonutChart({ title, data, dataKey, nameKey, height , width, colors = defaultColors }) {
+
   return (
     <Card>
-        <ResponsiveContainer width="100%" height={height}>
+      <h2>{title}</h2>
+        <ResponsiveContainer width={width} height={height}>
         <PieChart>
             <Pie
             data={data}

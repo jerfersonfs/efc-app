@@ -54,19 +54,22 @@ function Dashboard() {
           />
         ))}
       </Box>
-      <Box variant="section" className={styles.lineChart}>
-          <LineChart
-            className={styles.line}
-            title="Eficiência Mensal"
-            data={lineChartData}
-            xKey="month"
-            lineKey="eficiencia"
-            lineKey2="meta"
-            height={300}
-          />
-              
-          <Box variant="section" className={styles.donut}>
+      <Box variant="section" className={styles.chartsRow}>
+          <Box variant="div" className={styles.lineChart}>
+            <LineChart
+              className={styles.line}
+              title="Eficiência Mensal"
+              data={lineChartData}
+              xKey="month"
+              lineKey="eficiencia"
+              lineKey2="meta"
+              height={300}
+            />
+          </Box>
+           <Box variant="div" className={styles.donut} width={520}>
             <DonutChart
+              title="Overview"
+              height={300}
               data={[
                 { name: "Concluído", value: 120 },
                 { name: "Em andamento", value: 60 },
@@ -75,7 +78,7 @@ function Dashboard() {
               dataKey="value"
               nameKey="name"
             />
-          </Box>
+      </Box>
       </Box>
     </>
   )
