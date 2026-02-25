@@ -5,16 +5,16 @@ import styles from './Sidebar.module.css'
 
 function Sidebar() {
   return (
-    <aside className="sidebar">
-      <div className="sidebar__brand"><img src={logo}/></div>
+    <aside className={styles.sidebar}>
+      <div className={styles.sidebar__brand}><img src={logo}/></div>
       <nav aria-label="Navegação principal">
-        <ul className="sidebar__menu">
+        <ul className={styles.sidebar__menu}>
           {SIDEBAR_ROUTES.map((item) => (
-            <li key={item.id} className="sidebar__item">
+            <li key={item.id} className={styles.sidebar__item}>
               <NavLink
                 to={item.path}
                 className={({ isActive }) =>
-                  `sidebar__link ${isActive ? 'sidebar__link--active' : ''}`
+                  `${styles.sidebar__link} ${isActive ? styles.active : ''}`
                 }
               >
                 {item.label}

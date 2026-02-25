@@ -4,8 +4,16 @@
   gap: 1rem;
   margin-top: 1rem;
 }
-
+.cardHead{
+  height: 200px;
+}
 
 .lineChart {
   margin-top: 24px;
+  width: 1080px;
+}
+
+.donut{
+  width: 180px;
+  height: 100;
 }
