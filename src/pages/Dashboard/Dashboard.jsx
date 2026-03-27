@@ -1,10 +1,10 @@
-import { useNavigate } from 'react-router-dom'
-import Card from '../../components/Card/Card'
-import { ROUTES } from '../../routes/routes'
-import styles from './Dashboard.module.css'
-import LineChart from '../../components/LineChart/LineChart'
-import DonutChart from '../../components/DonutChart/DonutChart'
-import { Box} from '@mui/material'
+import { useNavigate } from 'react-router-dom';
+import { Card } from '@mui/material';
+import { ROUTES } from '../../routes/routes';
+import styles from './Dashboard.module.css';
+import LineChart from '../../components/LineChart/LineChart';
+import DonutChart from '../../components/DonutChart/DonutChart';
+import { Box} from '@mui/material';
 
 const cards = [
   {
@@ -48,9 +48,7 @@ function Dashboard() {
           <Card
             className={styles.cardHead}
             key={card.title}
-            title={card.title}
-            value={card.value}
-            description={card.description}
+            /* acertar parametros*/
           />
         ))}
       </Box>

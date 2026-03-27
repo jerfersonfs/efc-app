@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import styles from './Activities.module.css'
+import { Box, Card , Typography, Input, Button } from '@mui/material'
 
 const initialActivities = [
   {
@@ -66,45 +67,46 @@ function Activities() {
   }
 
   return (
-    <section className={styles.container}>
-      <div className={styles.card}>
-        <h2>Nova atividade</h2>
-        <form onSubmit={handleAdd} className={styles.form}>
-          <input
-            type="text"
-            value={title}
-            onChange={(event) => setTitle(event.target.value)}
-            placeholder="Ex.: Revisar orçamento semanal"
-          />
+    <Box container>
+        <Card>
+         <Typography variant='h6'>Nova atividade</Typography>
+            <form onSubmit={handleAdd} className={styles.form}>
+              <Input
+                type="text"
+                value={title}
+                onChange={(event) => setTitle(event.target.value)}
+                placeholder="Ex.: Revisar orçamento semanal"
+              />
 
-          <select value={priority} onChange={(event) => setPriority(event.target.value)}>
-            <option>Alta</option>
-            <option>Média</option>
-            <option>Baixa</option>
-          </select>
+              <select value={priority} onChange={(event) => setPriority(event.target.value)}>
+                <option>Alta</option>
+                <option>Média</option>
+                <option>Baixa</option>
+              </select>
 
-          <button type="submit">Adicionar</button>
-        </form>
-      </div>
+              <Button type="submit">Adicionar</Button>
+            </form>
+        </Card>
 
-      <div className={styles.card}>
-        <div className={styles.headerRow}>
-          <h2>Atividades</h2>
+
+      <Card>
+        <Box className={styles.headerRow}>
+          <Typography>Atividades</Typography>
           <select value={filter} onChange={(event) => setFilter(event.target.value)}>
             <option value="all">Todas</option>
             <option value="todo">A fazer</option>
             <option value="doing">Em andamento</option>
             <option value="done">Concluídas</option>
           </select>
-        </div>
+        </Box>
 
         <ul className={styles.list}>
           {filteredActivities.map((activity) => (
             <li key={activity.id} className={styles.item}>
-              <div>
+              <Box>
                 <p className={styles.title}>{activity.title}</p>
                 <p className={styles.meta}>Prioridade: {activity.priority}</p>
-              </div>
+              </Box>
 
               <select
                 value={activity.status}
@@ -117,8 +119,8 @@ function Activities() {
             </li>
           ))}
         </ul>
-      </div>
-    </section>
+      </Card>
+    </Box>
   )
 }
 

@@ -1,5 +1,5 @@
 import { LineChart as RechartsLineChart,Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
-import Card from "../Card/Card";
+import { Card } from "@mui/material";
 
 export default function LineChart({title, data =[], xKey,lineKey, lineKey2, height,width}){
     return(
