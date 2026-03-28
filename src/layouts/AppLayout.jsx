@@ -3,7 +3,7 @@ import Header from '../components/Header/Header'
 import Sidebar from '../components/Sidebar/Sidebar'
 import { ROUTE_META } from '../routes/routeConfig'
 
-export default function AppLayout() {
+export default function AppLayout({toggleTheme}) {
   const location = useLocation()
 
   const financeDetailMeta = {
@@ -19,7 +19,7 @@ export default function AppLayout() {
         <Sidebar />
 
         <main className="layout__main">
-          <Header title={meta.title} subtitle={meta.subtitle} />
+          <Header title={meta.title} toggleTheme={toggleTheme} subtitle={meta.subtitle}/>
           <Outlet />
         </main>
       </div>

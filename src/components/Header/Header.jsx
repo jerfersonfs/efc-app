@@ -1,8 +1,9 @@
 import DropdownMenu from '../DropdownMenu/DropdownMenu'
 import { ROUTES } from '../../routes/routes'
 import styles from './Header.module.css'
+import { Button } from '@mui/material'
 
-function Header({ title, subtitle }) {
+function Header({ title, subtitle, toggleTheme }) {
   const userMock = {
     initials: 'JF',
     name: 'Jeferson Freitas',
@@ -30,7 +31,9 @@ function Header({ title, subtitle }) {
         <h1 className="header__title">{title}</h1>
         {subtitle ? <p className="header__subtitle">{subtitle}</p> : null}
       </div>
-
+      <button onClick={toggleTheme}>
+        Alternar tema
+      </button>
       <DropdownMenu
         trigger={userMock.initials}
         ariaLabel="Menu do usuário"

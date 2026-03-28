@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react'
-import styles from './Activities.module.css'
-import { Box, Card , Typography, Input, Button } from '@mui/material'
+import { Box, Card, CardContent, Typography, TextField, Button,Select, Menu, MenuItem, List, ListItem } from '@mui/material'
 
 const initialActivities = [
   {
@@ -23,7 +22,7 @@ const initialActivities = [
   },
 ]
 
-function Activities() {
+export default function Activities() {
   const [activities, setActivities] = useState(initialActivities)
   const [title, setTitle] = useState('')
   const [priority, setPriority] = useState('Média')
@@ -67,61 +66,134 @@ function Activities() {
   }
 
   return (
-    <Box container>
-        <Card>
-         <Typography variant='h6'>Nova atividade</Typography>
-            <form onSubmit={handleAdd} className={styles.form}>
-              <Input
+    <Box container
+      sx={{
+        display: "grid",
+        gap: "1rem"
+      }}
+    >
+        <Card 
+          sx={{
+            p:"1rem",
+            borderRadius: "12px",
+            border: "1px solid #d8dce3",
+            boxShadow: "0 8px 30px rgba(17, 24, 39, 0.06)"
+          }}
+        >
+         <Typography variant='h6' sx={{mb: "0.8rem"}}>
+            Nova atividade
+          </Typography>
+            <Box component="form" onSubmit={handleAdd}
+              sx={{
+                display: "grid",
+                gridTemplateColumns: "1fr 180px auto",
+                gap:'0.6rem'
+              }}
+            >
+              <TextField
                 type="text"
                 value={title}
                 onChange={(event) => setTitle(event.target.value)}
                 placeholder="Ex.: Revisar orçamento semanal"
               />
 
-              <select value={priority} onChange={(event) => setPriority(event.target.value)}>
-                <option>Alta</option>
-                <option>Média</option>
-                <option>Baixa</option>
-              </select>
+              <Select 
+                value={priority} 
+                onChange={(event) => setPriority(event.target.value)}
+              >
+                <MenuItem value='Alta'>Alta</MenuItem>
+                <MenuItem value='Média'>Média</MenuItem>
+                <MenuItem value='Baixa'>Baixa</MenuItem>
+              </Select>
 
-              <Button type="submit">Adicionar</Button>
-            </form>
+              <Button type='submit' 
+                sx={{
+                  backgroundColor:'#2a5bd7',
+                  color:'#ffffff', 
+                  borderRadius: '8px', 
+                  textTransform: 'none',"&:hover": {
+                    backgroundColor: "#1f4bc1"
+                  }}}
+              >
+                Adicionar
+              </Button>
+            </Box>
         </Card>
 
 
-      <Card>
-        <Box className={styles.headerRow}>
-          <Typography>Atividades</Typography>
-          <select value={filter} onChange={(event) => setFilter(event.target.value)}>
-            <option value="all">Todas</option>
-            <option value="todo">A fazer</option>
-            <option value="doing">Em andamento</option>
-            <option value="done">Concluídas</option>
-          </select>
+      <Card
+        sx={{
+          border: "1px solid #d8dce3",
+          borderRadius: "12px",
+          p: "1rem",
+          boxShadow: "0 8px 30px rgba(17, 24, 39, 0.06)"
+        }}
+      >
+        <Box 
+        sx={{
+          display: 'flex',
+          justifyContent:'space-between',
+          gap: "0.8rem",
+          mb: "1rem"
+        }}
+        >
+          <Typography sx={{fontWeight: 700, fontSize: 20}}>Atividades</Typography>
+          <Select value={filter} onChange={(event) => setFilter(event.target.value)}>
+            <MenuItem value="all">Todas</MenuItem>
+            <MenuItem value="todo">A fazer</MenuItem>
+            <MenuItem value="doing">Em andamento</MenuItem>
+            <MenuItem value="done">Concluídas</MenuItem>
+          </Select>
         </Box>
 
-        <ul className={styles.list}>
+        <List
+          sx={{
+            listStyle: "none",
+            m: 0,
+            p: 0,
+            display: "grid",
+            gap: "0.6rem"
+          }}
+        >
           {filteredActivities.map((activity) => (
-            <li key={activity.id} className={styles.item}>
+            <ListItem key={activity.id}
+              sx={{
+              border: "1px solid #e1e7f0",
+              borderRadius: "10px",
+              p: "0.7rem",
+              display: "flex",
+              justifyContent: "space-between",
+              gap: "0.7rem",
+              alignItems: "center"
+            }}
+            >
               <Box>
-                <p className={styles.title}>{activity.title}</p>
-                <p className={styles.meta}>Prioridade: {activity.priority}</p>
+                <Typography variant='p' sx={{
+                  fontWeight: 600
+                }}>
+                  {activity.title}
+                </Typography>
+                <Typography
+                  sx={{
+                  mt: "0.2rem",
+                  color: "#607387"
+                }}                
+                >Prioridade: {activity.priority}
+                </Typography>
               </Box>
 
-              <select
+              <Select
                 value={activity.status}
                 onChange={(event) => updateStatus(activity.id, event.target.value)}
               >
-                <option value="todo">A fazer</option>
-                <option value="doing">Em andamento</option>
-                <option value="done">Concluída</option>
-              </select>
-            </li>
+                <MenuItem value="todo">A fazer</MenuItem>
+                <MenuItem value="doing">Em andamento</MenuItem>
+                <MenuItem value="done">Concluída</MenuItem>
+              </Select>
+            </ListItem>
           ))}
-        </ul>
+        </List>
       </Card>
     </Box>
   )
 }
-
-export default Activities
