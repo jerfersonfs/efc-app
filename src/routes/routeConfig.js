@@ -47,7 +47,8 @@ export const ROUTE_COMPONENTS = [
 
 export const SIDEBAR_ROUTES = [
   { id: 'dashboard', label: 'Dashboard', path: ROUTES.DASHBOARD },
-  { id: 'activities', label: 'Atividades', path: ROUTES.ACTIVITIES },
-  { id: 'finance', label: 'Finanças', path: ROUTES.FINANCE },
+  { id: 'tasks', label: 'Atividades', path: ROUTES.ACTIVITIES },
+  { id: 'finances', label: 'Finanças', path: ROUTES.FINANCE },
   { id: 'habits', label: 'Hábitos', path: ROUTES.HABITS },
 ]
+
