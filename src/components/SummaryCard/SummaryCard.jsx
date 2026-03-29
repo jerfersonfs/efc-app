@@ -19,7 +19,6 @@ export default function SummaryCard({ title, value, description }) {
           mt: "0.4rem",
           fontSize: "1.6rem",
           fontWeight: 700,
-          color: "#0f172a"
         }}
       >
         {value}

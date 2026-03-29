@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import SummaryCardItem from "../SummaryCardItem/SummaryCardItem.jsx";
 
-function SummaryCards({ cards }) {
+export default function SummaryCards({ cards }) {
   return (
     <Box
       sx={{
@@ -16,5 +16,3 @@ function SummaryCards({ cards }) {
     </Box>
   );
 }
-
-export default SummaryCards;

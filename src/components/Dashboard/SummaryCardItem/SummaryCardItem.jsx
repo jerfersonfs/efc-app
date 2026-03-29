@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import BaseCard from "../../BaseCard/BaseCard";
 
-function SummaryCardItem({ title, value, description }) {
+export default function SummaryCardItem({ title, value, description }) {
   return (
     <BaseCard>
       <Typography
@@ -37,5 +37,3 @@ function SummaryCardItem({ title, value, description }) {
     </BaseCard>
   );
 }
-
-export default SummaryCardItem;

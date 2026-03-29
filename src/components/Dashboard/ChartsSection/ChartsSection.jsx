@@ -3,7 +3,7 @@ import BaseCard from "../../BaseCard/BaseCard";
 import LineChart from "../../LineChart/LineChart.jsx";
 import DonutChart from "../../DonutChart/DonutChart";
 
-function ChartsSection({ lineChartData }) {
+export default function ChartsSection({ lineChartData }) {
   return (
     <Box
       sx={{
@@ -50,5 +50,3 @@ function ChartsSection({ lineChartData }) {
     </Box>
   );
 }
-
-export default ChartsSection;

@@ -1,7 +1,8 @@
 import {ROUTES} from '../../routes/routes'
+import { Typography } from '@mui/material';
 
 export default function Profile(){
     return(
-    <h1>oi</h1>
+    <Typography>Futura página de usuário</Typography>
     );
 }

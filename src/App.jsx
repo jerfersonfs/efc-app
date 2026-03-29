@@ -5,7 +5,7 @@ import './App.css'
 import AppLayout from './layouts/AppLayout'
 import { ROUTE_COMPONENTS } from './routes/routeConfig'
 
-function App() {
+export default function App() {
   return (
       <Routes>
         <Route path={ROUTES.LOGIN} element={<Login/>}/>
@@ -24,5 +24,3 @@ function App() {
       </Routes>
   )
 }
-
-export default App

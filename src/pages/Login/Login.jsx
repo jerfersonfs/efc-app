@@ -1,55 +1,220 @@
-import { useNavigate } from 'react-router-dom'
-import { ROUTES } from '../../routes/routes'
-import styles from './Login.module.css'
-import logo from "../../assets/elc-logo2.png"
+import { useNavigate } from "react-router-dom";
+import {
+  Box,
+  Typography,
+  TextField,
+  Button
+} from "@mui/material";
 
-function Login() {
-  const navigate = useNavigate()
+import { ROUTES } from "../../routes/routes";
+import logo from "../../assets/elc-logo2.png";
+
+export default function Login() {
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
-    event.preventDefault()
-    navigate(ROUTES.DASHBOARD)
-  }
+    event.preventDefault();
+    navigate(ROUTES.DASHBOARD);
+  };
 
   return (
-    <main className={styles.loginPage}>
-      <section className={styles.loginShell}>
-        <div className={styles.welcomePanel}>
-          <div className={`${styles.blob} ${styles.blobTop}`} />
-          <div className={`${styles.blob} ${styles.blobMid}`} />
-          <div className={`${styles.blob} ${styles.blobBottom}`} />
+    <Box
+      sx={{
+        minHeight: "100vh",
+        display: "grid",
+        placeItems: "center",
+        backgroundColor: "background.default",
+        p: 2
+      }}
+    >
+      <Box
+        sx={{
+          width: "100%",
+          maxWidth: "1100px",
+          minHeight: "720px",
+          display: "grid",
+          gridTemplateColumns: {
+            xs: "1fr",
+            md: "1.1fr 1fr"
+          },
+          borderRadius: "24px",
+          overflow: "hidden",
+          boxShadow: "0 20px 45px rgba(0,0,0,0.12)",
+          backgroundColor: "background.paper"
+        }}
+      >
+        {/* LEFT - BRAND */}
+        <Box
+          sx={{
+            position: "relative",
+            background:
+              "linear-gradient(180deg, #0f172a 0%, #17223a 55%, #1d2940 100%)",
+            color: "#eef3ff",
+            display: { xs: "none", md: "grid" },
+            placeContent: "center",
+            p: 4
+          }}
+        >
+          {/* BLOBS */}
+          <Box
+            sx={{
+              position: "absolute",
+              width: 220,
+              height: 220,
+              top: 0,
+              left: -35,
+              borderRadius: "34px",
+              background: "rgba(140,166,212,0.15)"
+            }}
+          />
+          <Box
+            sx={{
+              position: "absolute",
+              width: 160,
+              height: 160,
+              top: 120,
+              left: -20,
+              borderRadius: "34px",
+              background: "rgba(140,166,212,0.15)"
+            }}
+          />
+          <Box
+            sx={{
+              position: "absolute",
+              width: 170,
+              height: 170,
+              bottom: 40,
+              right: 20,
+              borderRadius: "34px",
+              background: "rgba(140,166,212,0.15)"
+            }}
+          />
 
-          <div className={styles.welcomeContent}>
-            <p className={styles.logo}><img src={logo} alt="" /></p>
-            <h1>Bem-vindo ao ELC</h1>
-            <p>Seu controle de vida eficiente está aqui</p>
-          </div>
-        </div>
+          {/* CONTENT */}
+          <Box sx={{ zIndex: 2, textAlign: "center" }}>
+            <Box component="img" src={logo} sx={{ width: 120, mb: 2 }} />
 
-        <div className={styles.formPanel}>
-          <h2>Cadastre-se</h2>
-          <p className={styles.formSubtitle}>Cadastre-se para ter a melhor performance e controle de sua vida</p>
+            <Typography
+              sx={{
+                fontSize: "2.5rem",
+                fontWeight: 800
+              }}
+            >
+              Bem-vindo ao ELC
+            </Typography>
 
-          <form onSubmit={handleSubmit} className={styles.form}>
-            <input id="email" type="email" placeholder="E-mail" required />
-            <input id="password" type="password" placeholder="Senha" required />
-            <button type="submit" className={styles.continueButton}>
-              CONTINUE →
-            </button>
-          </form>
+            <Typography sx={{ mt: 1.5, opacity: 0.9 }}>
+              Seu controle de vida eficiente está aqui
+            </Typography>
+          </Box>
+        </Box>
 
-          <p className={styles.divider}>Ou se conecte com uma mídia social</p>
+        {/* RIGHT - FORM */}
+        <Box
+          sx={{
+            display: "grid",
+            alignContent: "center",
+            p: { xs: 3, md: 4 }
+          }}
+        >
+          <Typography
+            variant="h4"
+            sx={{
+              textAlign: "center",
+              fontWeight: 700,
+              mb: 1
+            }}
+          >
+            Cadastre-se
+          </Typography>
 
-          <button type="button" className={`${styles.socialButton} ${styles.google}`}>
-             Google
-          </button>
-          <button type="button" className={`${styles.socialButton} ${styles.facebook}`}>
-             Facebook
-          </button>
-        </div>
-      </section>
-    </main>
-  )
+          <Typography
+            sx={{
+              textAlign: "center",
+              color: "text.secondary",
+              mb: 3
+            }}
+          >
+            Comece sua jornada de produtividade
+          </Typography>
+
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            sx={{
+              display: "grid",
+              gap: 1.5
+            }}
+          >
+            <TextField
+              type="email"
+              label="Email"
+              size="small"
+              fullWidth
+            />
+
+            <TextField
+              type="password"
+              label="Senha"
+              size="small"
+              fullWidth
+            />
+
+            <Button
+              type="submit"
+              variant="contained"
+              sx={{
+                mt: 1,
+                borderRadius: "12px",
+                textTransform: "none",
+                fontWeight: 600,
+                py: 1.2
+              }}
+            >
+              Continuar
+            </Button>
+          </Box>
+
+          {/* DIVIDER */}
+          <Typography
+            sx={{
+              textAlign: "center",
+              color: "text.secondary",
+              mt: 3,
+              mb: 1
+            }}
+          >
+            ou continue com
+          </Typography>
+
+          {/* SOCIAL */}
+          <Box sx={{ display: "grid", gap: 1 }}>
+            <Button
+              variant="outlined"
+              sx={{
+                borderRadius: "12px",
+                textTransform: "none"
+              }}
+            >
+              Google
+            </Button>
+
+            <Button
+              variant="contained"
+              sx={{
+                borderRadius: "12px",
+                textTransform: "none",
+                backgroundColor: "#1877f2",
+                "&:hover": {
+                  backgroundColor: "#166fe5"
+                }
+              }}
+            >
+              Facebook
+            </Button>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
+  );
 }
-
-export default Login

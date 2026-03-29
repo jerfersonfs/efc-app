@@ -1,48 +1,33 @@
-import {
-  Box,
-  IconButton,
-  Tooltip,
-  Typography
-} from "@mui/material";
-
-import HomeTwoToneIcon from '@mui/icons-material/HomeTwoTone';
-import CurrencyExchangeTwoToneIcon from '@mui/icons-material/CurrencyExchangeTwoTone';
-import TaskAltTwoToneIcon from '@mui/icons-material/TaskAltTwoTone';
-import TrendingUpTwoToneIcon from '@mui/icons-material/TrendingUpTwoTone';
-import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
-
-
+import { Box,IconButton,Tooltip,Typography } from "@mui/material";
+import IconLibary from "../IconLibary/IconLibary";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { SIDEBAR_ROUTES } from "../../routes/routeConfig";
 
 const iconMap = {
-  dashboard: <HomeTwoToneIcon/>,
-  finances: <CurrencyExchangeTwoToneIcon />,
-  tasks: <TaskAltTwoToneIcon />,
-  habits: <TrendingUpTwoToneIcon />
+  dashboard: <IconLibary name="HomeTwoToneIcon"/>,
+  finances: <IconLibary name="CurrencyExchangeTwoToneIcon"/>,
+  tasks: <IconLibary name="TaskAltTwoToneIcon"/>,
+  habits: <IconLibary name="TrendingUpTwoToneIcon"/>
 };
 
-function Sidebar() {
-  const [open, setOpen] = useState(false);
+export default function Sidebar({open,setOpen}) {
 
   return (
     <Box
       sx={{
         width: open ? 220 : 72,
         transition: "0.3s",
-        height: "100%",
+        position: "fixed",
+        height: "100vh",
         backgroundColor: "background.paper",
         borderRight: "1px solid",
-        borderColor: "divider",
-        display: "flex",
-        flexDirection: "column",
-        p: 1
+        borderColor: "divider"
       }}
     >
       {/* TOGGLE */}
-      <IconButton onClick={() => setOpen(!open)} sx={{ mb: 2 }}>
-        <MenuTwoToneIcon />
+      <IconButton onClick={() => setOpen(!open)}>
+        <IconLibary name="MenuTwoToneIcon" />
       </IconButton>
 
       {/* LISTA */}
@@ -98,5 +83,3 @@ function Sidebar() {
     </Box>
   );
 }
-
-export default Sidebar;

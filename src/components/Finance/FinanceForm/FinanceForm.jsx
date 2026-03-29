@@ -42,8 +42,6 @@ export default function FinanceForm({
           size="small"
           sx={{
             "& .MuiOutlinedInput-root": {
-              borderRadius: "10px",
-              backgroundColor: "#f9fafb"
             }
           }}
         />
@@ -55,8 +53,7 @@ export default function FinanceForm({
           size="small"
           sx={{
             "& .MuiOutlinedInput-root": {
-              borderRadius: "10px",
-              backgroundColor: "#f9fafb"
+              borderRadius: "10px"
             }
           }}
         />

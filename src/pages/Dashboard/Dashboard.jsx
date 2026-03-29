@@ -36,7 +36,7 @@ const lineChartData = [
   { month: "Dez", eficiencia: 92, meta: 90 }
 ];
 
-function Dashboard() {
+export default function Dashboard() {
   return (
     <Box
       sx={{
@@ -53,5 +53,3 @@ function Dashboard() {
     </Box>
   );
 }
-
-export default Dashboard;

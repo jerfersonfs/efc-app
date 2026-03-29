@@ -21,11 +21,10 @@ export default function TransactionList({
               border: "1px solid #f1f5f9",
               borderRadius: "10px",
               p: "0.7rem 0.9rem",
-              backgroundColor: "#fff",
               transition: "all 0.2s",
 
               "&:hover": {
-                backgroundColor: "#f8fafc"
+                backgroundColor: "#afaa7e"
               }
             }}
           >

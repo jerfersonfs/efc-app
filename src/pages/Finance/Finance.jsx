@@ -71,7 +71,6 @@ export default function Finance() {
       sx={{
         display: "grid",
         gap: "1.2rem",
-        backgroundColor: "#f8fafc",
         minHeight: "100vh",
         p: "1.5rem"
       }}
