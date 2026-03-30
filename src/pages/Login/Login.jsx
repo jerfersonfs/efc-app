@@ -12,8 +12,8 @@ import logo from "../../assets/elc-logo2.png";
 export default function Login() {
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = () => {
+    localStorage.setItem("auth","true");
     navigate(ROUTES.DASHBOARD);
   };
 
