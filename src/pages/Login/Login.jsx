@@ -10,10 +10,11 @@ import { ROUTES } from "../../routes/routes";
 import logo from "../../assets/elc-logo2.png";
 
 export default function Login() {
-  const navigate = useNavigate();
+  const navigate = useNavigate();  
 
-  const handleSubmit = () => {
-    localStorage.setItem("auth","true");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
     navigate(ROUTES.DASHBOARD);
   };
 
@@ -212,6 +213,18 @@ export default function Login() {
             >
               Facebook
             </Button>
+            <Box
+            sx={{
+              mt:4,
+              display:"flex"
+            }}
+            >
+              <Button variant="contained"
+              onClick={()=>navigate(ROUTES.LANDING)}
+              >
+                Voltar
+              </Button>
+            </Box>
           </Box>
         </Box>
       </Box>

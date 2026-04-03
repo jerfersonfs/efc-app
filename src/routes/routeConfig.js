@@ -52,3 +52,6 @@ export const SIDEBAR_ROUTES = [
   { id: 'habits', label: 'Hábitos', path: ROUTES.HABITS },
 ]
 
+export const INITIAL_ROUTES = [
+  {id: ''}
+]

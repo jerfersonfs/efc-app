@@ -11,23 +11,10 @@ import PublicRoute from './components/PublicRoute/PublicRoute'
 export default function App() {
   return (
       <Routes>
-        <Route path="/" element={
-          <PublicRoute>
-           <LandingPage/>
-          </PublicRoute>
-          }/>
+        <Route path="/" element={<LandingPage />} />
+        <Route path={ROUTES.LOGIN} element={<Login />} />
 
-        <Route path={ROUTES.LOGIN} element={
-          <PublicRoute>  
-            <Login/>
-          </PublicRoute>
-          }/>
-
-        <Route element={
-          <ProtectedRoute>
-            <AppLayout/>
-          </ProtectedRoute>
-        }>
+        <Route element={<AppLayout />}>
           {ROUTE_COMPONENTS.map((route) => (
             <Route
               key={route.path}
@@ -37,7 +24,7 @@ export default function App() {
           ))}
         </Route>
 
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
   )
 }

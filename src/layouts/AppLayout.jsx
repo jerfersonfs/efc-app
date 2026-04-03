@@ -2,11 +2,17 @@ import { useState } from "react";
 import { Box } from "@mui/material";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Header from "../components/Header/Header";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation} from "react-router-dom";
+import { ROUTE_META } from "../routes/routeConfig";
 
 export default function AppLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  const location = useLocation();
+  const meta = ROUTE_META[location.pathname] || {
+    title: "",
+    subtitle: "",
+  }
   return (
     <Box sx={{ display: "flex" }}>
       
@@ -23,7 +29,10 @@ export default function AppLayout() {
           p: 3
         }}
       >
-        <Header />
+        <Header
+          title={meta.title}
+          subtitle={meta.subtitle}
+        />
         <Outlet />
       </Box>
     </Box>

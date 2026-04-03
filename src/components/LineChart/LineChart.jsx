@@ -10,19 +10,19 @@ export default function LineChart({title, data =[], xKey,lineKey, lineKey2, heig
                     <XAxis dataKey={xKey}/>
                     <YAxis/>
                     <Tooltip/>
-                    <Line
-                        type="monotone"
-                        dataKey={lineKey}
-                        stroke="#1d2940"
-                        strokeWidth={2}
-                    />
-                    <Line
-                        type="monotone"
-                        dataKey={lineKey2}
-                        stroke="#9ba1ad"
-                        strokeWidth={2}
-                        strokeDasharray="6 4"
-                    />
+                        <Line
+                            type="monotone"
+                            dataKey={lineKey}
+                            stroke="#1d2940"
+                            strokeWidth={2}
+                        />
+                        <Line
+                            type="monotone"
+                            dataKey={lineKey2}
+                            stroke="#9ba1ad"
+                            strokeWidth={2}
+                            strokeDasharray="6 4"
+                        />
                     </RechartsLineChart>
             </ResponsiveContainer>
         </Card>

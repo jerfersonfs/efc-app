@@ -26,9 +26,9 @@ export default function Sidebar({open,setOpen}) {
       }}
     >
       {/* TOGGLE */}
-      <IconButton onClick={() => setOpen(!open)}>
-        <IconLibary name="MenuTwoToneIcon" />
-      </IconButton>
+        <IconButton onClick={() => setOpen(!open)}>
+          <IconLibary name="MenuTwoToneIcon"/>
+        </IconButton>
 
       {/* LISTA */}
       <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
@@ -44,8 +44,10 @@ export default function Sidebar({open,setOpen}) {
                   sx={{
                     display: "flex",
                     alignItems: "center",
-                    gap: 2,
+                    gap: 1.5,
                     p: 1.2,
+                    px:2,
+                    justifyContent: open ? "flex-start" : "center",
                     borderRadius: "10px",
                     cursor: "pointer",
 

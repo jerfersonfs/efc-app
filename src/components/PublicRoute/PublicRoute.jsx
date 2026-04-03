@@ -1,12 +1,15 @@
 import { Navigate } from "react-router-dom";
+import { useAuth } from "../../context/Authcontext";
 import { ROUTES } from "../../routes/routes";
+import { Outlet } from "react-router-dom";
 
-export default function PublicRoute({ children }) {
-  const isAuthenticated = localStorage.getItem("auth") === "true"
+
+export default function PublicRoute() {
+  const { isAuthenticated } = useAuth();
 
   if (isAuthenticated) {
-    return <Navigate to={ROUTES.DASHBOARD} replace />;
+    return <Navigate to={ROUTES.LOGIN} replace />;
   }
 
-  return children;
+  return <Outlet/>;
 }

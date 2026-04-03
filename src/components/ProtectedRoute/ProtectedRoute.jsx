@@ -1,12 +1,14 @@
 import { Navigate } from "react-router-dom";
+import { useAuth } from "../../context/Authcontext";
 import { ROUTES } from "../../routes/routes";
+import { Outlet } from "react-router-dom";
 
-export default function ProtectedRoute({ children }) {
-  const isAuthenticated = localStorage.getItem("auth") === "true"; // depois você liga isso ao seu auth real
+export default function ProtectedRoute() {
+  const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {
     return <Navigate to={ROUTES.LOGIN} replace />;
   }
 
-  return children;
+  return <Outlet/>;
 }
