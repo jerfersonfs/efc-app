@@ -1,0 +1,193 @@
+import {
+  Box,
+  Chip,
+  Divider,
+  LinearProgress,
+  Stack,
+  Typography,
+} from "@mui/material";
+import IconLibary from "../../components/IconLibary/IconLibary";
+
+const previewItems = [
+  {
+    type: "habit",
+    title: "Hábito diário",
+    subtitle: "Leitura de 20 min",
+    note: "7 dias seguidos. Você está mantendo constância!",
+    statusLabel: "Concluído hoje",
+    checked: true,
+    height: 208,
+  },
+  {
+    type: "weekly",
+    title: "Atividade semanal",
+    subtitle: "Treino funcional",
+    note: "Meta de 4 sessões na semana.",
+    progress: 75,
+    progressLabel: "3 de 4 sessões",
+    height: 232,
+  },
+  {
+    type: "finance",
+    title: "Resumo financeiro mensal",
+    subtitle: "Abril de 2026",
+    note: "Saldo parcial com gasto controlado em alimentação.",
+    balanceVariation: "+12,4%",
+    trend: "up",
+    height: 220,
+  },
+  {
+    type: "habit",
+    title: "Hábito diário",
+    subtitle: "Planejamento matinal",
+    note: "Você completou 5 de 7 dias nesta semana.",
+    statusLabel: "Em evolução",
+    checked: false,
+    height: 196,
+  },
+  {
+    type: "weekly",
+    title: "Atividade semanal",
+    subtitle: "Revisão de metas",
+    note: "Faltam 2 revisões para fechar a semana no alvo.",
+    progress: 40,
+    progressLabel: "2 de 5 revisões",
+    height: 210,
+  },
+];
+
+function PreviewCard({ item, index }) {
+  return (
+    <Box
+      sx={{
+        p: 3,
+        minHeight: item.height,
+        borderRadius: 3,
+        background: "linear-gradient(160deg, rgba(15,23,42,.95), rgba(2,6,23,.85))",
+        border: "1px solid rgba(148,163,184,.22)",
+        boxShadow: "0 18px 40px rgba(2,6,23,.35)",
+        breakInside: "avoid",
+        mb: 2,
+        opacity: 0,
+        transform: "translateY(14px)",
+        animation: "previewStagger .45s ease forwards",
+        animationDelay: `${index * 90}ms`,
+        transition: "transform .2s ease, border-color .2s ease, box-shadow .2s ease",
+        '&:hover': {
+          transform: "translateY(-4px)",
+          borderColor: "rgba(56,189,248,.55)",
+          boxShadow: "0 20px 44px rgba(2,6,23,.45)",
+        },
+      }}
+    >
+      <Stack direction="row" justifyContent="space-between" alignItems="center" mb={2}>
+        <Typography variant="overline" sx={{ color: "#94a3b8", letterSpacing: ".08em" }}>
+          {item.title}
+        </Typography>
+
+        {item.type === "habit" && (
+          <Chip
+            icon={<IconLibary name="CheckCircleRoundedIcon" sx={{ fontSize: 16 }} />}
+            label={item.statusLabel}
+            size="small"
+            color={item.checked ? "success" : "info"}
+            variant={item.checked ? "filled" : "outlined"}
+          />
+        )}
+      </Stack>
+
+      <Typography variant="h6" sx={{ color: "#f8fafc" }}>
+        {item.subtitle}
+      </Typography>
+
+      <Typography sx={{ color: "#cbd5e1", mt: 1.2, mb: 2, lineHeight: 1.45 }}>
+        {item.note}
+      </Typography>
+
+      <Divider sx={{ borderColor: "rgba(33, 115, 230, 0.15)", mb: 2 }} />
+
+      {item.type === "weekly" && (
+        <Box>
+          <Stack direction="row" justifyContent="space-between" mb={1}>
+            <Typography sx={{ color: "#e2e8f0", fontSize: 13 }}>Progresso semanal</Typography>
+            <Typography sx={{ color: "#38bdf8", fontSize: 13 }}>{item.progress}%</Typography>
+          </Stack>
+
+          <LinearProgress
+            variant="determinate"
+            value={item.progress}
+            sx={{
+              height: 8,
+              borderRadius: 999,
+              backgroundColor: "rgba(148,163,184,.2)",
+              '& .MuiLinearProgress-bar': {
+                borderRadius: 999,
+                background: "linear-gradient(90deg, #22d3ee 0%, #38bdf8 100%)",
+              },
+            }}
+          />
+
+          <Typography sx={{ color: "#94a3b8", mt: 1, fontSize: 12 }}>{item.progressLabel}</Typography>
+        </Box>
+      )}
+
+      {item.type === "finance" && (
+        <Stack direction="row" alignItems="center" spacing={1}>
+          {item.trend === "up" ? (
+            <IconLibary name="TrendingUpRoundedIcon" sx={{ color: "#22c55e", fontSize: 20 }} />
+          ) : (
+            <IconLibary name="TrendingDownRoundedIcon" sx={{ color: "#ef4444", fontSize: 20 }} />
+          )}
+
+          <Typography
+            sx={{
+              fontWeight: 700,
+              color: item.trend === "up" ? "#4ade80" : "#f87171",
+            }}
+          >
+            {item.balanceVariation}
+          </Typography>
+
+          <Typography sx={{ color: "#94a3b8", fontSize: 13 }}>vs. mês anterior</Typography>
+        </Stack>
+      )}
+    </Box>
+  );
+}
+
+export default function Preview() {
+  return (
+    <Box
+      sx={{
+        py: 10,
+        px: 4,
+        background: "#020617",
+        color: "white",
+        '@keyframes previewStagger': {
+          from: { opacity: 0, transform: "translateY(14px)" },
+          to: { opacity: 1, transform: "translateY(0)" },
+        },
+      }}
+    >
+      <Box sx={{ maxWidth: 1200, mx: "auto" }}>
+        <Typography variant="h4" textAlign="center" mb={1.5}>
+          Uma prévia do seu fluxo no ELC
+        </Typography>
+        <Typography textAlign="center" sx={{ color: "#94a3b8", mb: 5 }}>
+          Visão rápida de hábitos, rotinas e finanças com feedback visual imediato.
+        </Typography>
+
+        <Box
+          sx={{
+            columns: { xs: 1, sm: 2, md: 3 },
+            columnGap: 2,
+          }}
+        >
+          {previewItems.map((item, index) => (
+            <PreviewCard key={`${item.type}-${item.subtitle}`} item={item} index={index} />
+          ))}
+        </Box>
+      </Box>
+    </Box>
+  );
+}

@@ -4,13 +4,34 @@ import CurrencyExchangeTwoToneIcon from '@mui/icons-material/CurrencyExchangeTwo
 import TaskAltTwoToneIcon from '@mui/icons-material/TaskAltTwoTone';
 import TrendingUpTwoToneIcon from '@mui/icons-material/TrendingUpTwoTone';
 import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
+import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
+import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
+import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
+import {
+  EventNoteRounded,
+  PlayCircleRounded,
+  QueryStatsRounded,
+  CheckCircleRounded,
+  SavingsRounded,
+  RepeatRounded,
+} from "@mui/icons-material";
+
 
 const icons = {
-HomeTwoToneIcon:HomeTwoToneIcon,
-CurrencyExchangeTwoToneIcon:CurrencyExchangeTwoToneIcon,
-TaskAltTwoToneIcon:TaskAltTwoToneIcon,
-TrendingUpTwoToneIcon:TrendingUpTwoToneIcon,
-MenuTwoToneIcon:MenuTwoToneIcon
+    HomeTwoToneIcon:HomeTwoToneIcon,
+    CurrencyExchangeTwoToneIcon:CurrencyExchangeTwoToneIcon,
+    TaskAltTwoToneIcon:TaskAltTwoToneIcon,
+    TrendingUpTwoToneIcon:TrendingUpTwoToneIcon,
+    MenuTwoToneIcon:MenuTwoToneIcon,
+    CheckCircleRoundedIcon:CheckCircleRoundedIcon,
+    TrendingUpRoundedIcon:TrendingUpRoundedIcon,
+    TrendingDownRoundedIcon:TrendingDownRoundedIcon,
+    EventNoteRounded:EventNoteRounded,
+    PlayCircleRounded:PlayCircleRounded,
+    QueryStatsRounded:QueryStatsRounded,
+    CheckCircleRounded:CheckCircleRounded,
+    SavingsRounded:SavingsRounded,
+    RepeatRounded:RepeatRounded
 }
 
 export default function IconLibary({name,...props}){
