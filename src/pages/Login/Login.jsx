@@ -8,6 +8,7 @@ import {
 
 import { ROUTES } from "../../routes/routes";
 import logo from "../../assets/elc-logo2.png";
+import IconLibary from "../../components/IconLibary/IconLibary";
 
 export default function Login() {
   const navigate = useNavigate();  
@@ -169,7 +170,9 @@ export default function Login() {
                 borderRadius: "12px",
                 textTransform: "none",
                 fontWeight: 600,
-                py: 1.2
+                py: 1.2,
+                backgroundColor:"#17223ad2 ",
+                color:"#fff"
               }}
             >
               Continuar
@@ -194,7 +197,10 @@ export default function Login() {
               variant="outlined"
               sx={{
                 borderRadius: "12px",
-                textTransform: "none"
+                textTransform: "none",
+                "&:hover":{
+                  color: "linear-gradient(180deg, #0f172a 0%, #17223a 55%, #1d2940 100%)"
+                }
               }}
             >
               Google
@@ -205,7 +211,7 @@ export default function Login() {
               sx={{
                 borderRadius: "12px",
                 textTransform: "none",
-                backgroundColor: "#1877f2",
+                backgroundColor: "#2164bbe3",
                 "&:hover": {
                   backgroundColor: "#166fe5"
                 }
@@ -220,9 +226,13 @@ export default function Login() {
             }}
             >
               <Button variant="contained"
+              sx={{
+                backgroundColor: "#17223ad2 ",
+                color:"#fff",
+              }}
               onClick={()=>navigate(ROUTES.LANDING)}
               >
-                Voltar
+                <IconLibary name="ArrowCircleLeftTwoToneIcon"/>Voltar
               </Button>
             </Box>
           </Box>

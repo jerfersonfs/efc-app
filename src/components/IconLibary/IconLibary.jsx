@@ -7,6 +7,7 @@ import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
 import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
 import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
+import ArrowCircleLeftTwoToneIcon from '@mui/icons-material/ArrowCircleLeftTwoTone';
 import {
   EventNoteRounded,
   PlayCircleRounded,
@@ -31,7 +32,9 @@ const icons = {
     QueryStatsRounded:QueryStatsRounded,
     CheckCircleRounded:CheckCircleRounded,
     SavingsRounded:SavingsRounded,
-    RepeatRounded:RepeatRounded
+    RepeatRounded:RepeatRounded,
+    ArrowCircleLeftTwoToneIcon:ArrowCircleLeftTwoToneIcon
+
 }
 
 export default function IconLibary({name,...props}){

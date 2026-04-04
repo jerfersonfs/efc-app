@@ -64,14 +64,6 @@ const previewColumns = [
 export default function Hero() {
   const navigate = useNavigate();
 
-  const scrollToPreview = () => {
-    const previewSection = document.getElementById("hero-preview");
-    if (previewSection) {
-      previewSection.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
-
   return (
     <Box
       sx={{
@@ -83,7 +75,7 @@ export default function Hero() {
         background:
           "radial-gradient(circle at top, #1e293b, #020617)",
         px: { xs: 2.5, md: 4 },
-        py: { xs: 8, md: 0 },
+        py: { xs: 8, md: 3 },
         background: "radial-gradient(circle at top, #1e293b, #020617)",
         color: "white",
           "@keyframes fadeSlideUp": {
@@ -94,26 +86,31 @@ export default function Hero() {
     >
       <Box
         sx={{
-          maxWidth: "1200px",
-          width: "100%",
+          maxWidth: { xs: "100%", xl: "1480px" },
+          width: "min(94vw, 1480px)",
+          mx: "auto",
           display: "grid",
-          gridTemplateColumns: { xs: "1fr", md: "1fr 1.2fr" },
-          gap: {xs: 5,md:6},
+          gridTemplateColumns: { xs: "1fr", md: "1fr 1.15fr", xl: "1fr 1.2fr" },
+          gap: { xs: 4, md: 6, xl: 8 },
           alignItems: "center",
         }}
       >
         {/* TEXTO */}
-        <Stack spacing={3} sx={{ animation: "fadeSlideUp 700ms ease-out both" }}>
-          <Typography variant="h2" fontWeight="bold" sx={{ lineHeight: 1.2 }}>
-            Centralize hábitos, tarefas e finanças em um só fluxo para
-            <Box component="span" sx={{ color: "#38bdf8", ml: 1 }}>
-              decidir melhor e agir com consistência
+        <Stack spacing={6} sx={{ animation: "fadeSlideUp 700ms ease-out both" }}>
+          <Typography variant="h3" fontWeight={800} sx={{
+            fontSize: "clamp(2.2rem, 3.2vw, 4.4rem)",
+            fontWeight: 800,
+            lineHeight: 1.12,
+            maxWidth: { xs: "100%", xl: "18ch" },
+          }}>
+            Centralize hábitos, tarefas e finanças
+            <Box component="span" sx={{ color: "#38bdf8", ml: 3 }}>
+               em um só fluxo
             </Box>
           </Typography>
 
-          <Typography variant="h6" sx={{ opacity: 0.78, maxWidth: 560 }}>
-            Organize sua rotina, acompanhe suas atividades e mantenha o controle
-            financeiro no mesmo lugar — sem trocar de app a cada decisão.
+          <Typography variant="h6" sx={{ opacity: 0.78, maxWidth: 600, wordSpacing: 4, letterSpacing:1.2 }}>
+            Organize sua vida de um jeito eficiente e prático — sem trocar de app ou criar planilhas.
           </Typography>
 
           <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
@@ -136,26 +133,6 @@ export default function Hero() {
             >
               Começar agora
             </Button>
-            {/*
-            <Button
-              variant="outlined"
-              size="large"
-              sx={{
-                color: "white",
-                borderColor: "rgba(255,255,255,0.3)",
-                transition: "transform 200ms ease, background-color 200ms ease",
-                willChange: "transform",
-                "&:hover": {
-                  borderColor: "rgba(255,255,255,0.5)",
-                  backgroundColor: "rgba(255,255,255,0.06)",
-                  transform: "translateY(-2px)",
-                },
-              }}
-              onClick={scrollToPreview}              
-            >
-              Ver como funciona
-            </Button>
-            */}
           </Stack>
         </Stack>
 
