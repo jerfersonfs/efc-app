@@ -23,10 +23,11 @@ export default function AppLayout() {
 
       <Box
         sx={{
-          flexGrow: 1,
-          transition: "all 0.3s ease",
-          ml: sidebarOpen ? "220px" : "72px",
-          p: 3
+    transition: "all 0.3s ease",
+    ml: sidebarOpen ? "220px" : "72px",
+    width: sidebarOpen ? "calc(100% - 220px)" : "calc(100% - 72px)",
+    p: 3,
+    overflowX: "hidden",
         }}
       >
         <Header

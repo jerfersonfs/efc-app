@@ -71,6 +71,7 @@ export default function Hero() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        overflow:"clip",
         px: 4,
         background:
           "radial-gradient(circle at top, #1e293b, #020617)",
@@ -133,9 +134,10 @@ export default function Hero() {
             >
               Começar agora
             </Button>
+            
           </Stack>
         </Stack>
-
+        
         {/* PREVIEW */}
         <Box
           sx={{

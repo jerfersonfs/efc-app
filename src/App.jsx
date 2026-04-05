@@ -5,8 +5,6 @@ import { ROUTES} from './routes/routes'
 import './App.css'
 import AppLayout from './layouts/AppLayout'
 import { ROUTE_COMPONENTS } from './routes/routeConfig'
-import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
-import PublicRoute from './components/PublicRoute/PublicRoute'
 
 export default function App() {
   return (

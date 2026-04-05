@@ -14,6 +14,7 @@ import {
   CheckCircleRounded,
   SavingsRounded,
   RepeatRounded,
+  ArrowForwardRounded
 } from "@mui/icons-material";
 
 const journeyBlocks = [
@@ -139,142 +140,165 @@ export default function Features() {
           metas claras e resultado mensurável.
         </Typography>
 
-               <Grid container spacing={3}>
-          {journeyBlocks.map((block, index) => {
-            const BlockIcon = block.icon;
-            return (
-              <Grid item xs={12} md={4} key={block.key}>
-                <Box
-                  sx={{
-                    height: "100%",
-                    p: { xs: 3, md: 3.5 },
-                    borderRadius: 4,
-                    background: "rgba(15, 23, 42, 0.78)",
-                    border: "1px solid rgba(148, 163, 184, 0.24)",
-                    boxShadow: "0 12px 28px rgba(2, 6, 23, 0.35)",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 2,
-                    order: { xs: index + 1, md: "unset" },
-                  }}
-                >
-                  <Stack
-                    direction="row"
-                    justifyContent="space-between"
-                    alignItems="center"
-                    spacing={1.5}
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: { xs: "1fr", lg: "1fr auto 1fr auto 1fr" },
+              gap: { xs: 2.5, md: 3 },
+              alignItems: "stretch",
+              "@keyframes arrowPulse": {
+                "0%, 100%": { opacity: 0.4, transform: "translateX(0px)" },
+                "50%": { opacity: 1, transform: "translateX(6px)" },
+              },
+            }}
+          >
+            {journeyBlocks.map((block, index) => {
+              const BlockIcon = block.icon;
+
+              return (
+                <Box key={block.key} sx={{ display: "contents" }}>
+                  {/* CARD */}
+                  <Box
+                    sx={{
+                      height: "100%",
+                      p: { xs: 3, md: 3.5 },
+                      borderRadius: 4,
+                      background: "rgba(15, 23, 42, 0.78)",
+                      border: "1px solid rgba(148, 163, 184, 0.24)",
+                      boxShadow: "0 12px 28px rgba(2, 6, 23, 0.35)",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 2,
+                    }}
                   >
+                    <Stack
+                      direction="row"
+                      justifyContent="space-between"
+                      alignItems="center"
+                      spacing={1.5}
+                    >
+                      <Chip
+                        label={block.etapa}
+                        size="small"
+                        sx={{
+                          fontWeight: 700,
+                          color: "#0F172A",
+                          backgroundColor: "#A5F3FC",
+                        }}
+                      />
+                      <Box
+                        sx={{
+                          width: 38,
+                          height: 38,
+                          borderRadius: "50%",
+                          display: "grid",
+                          placeItems: "center",
+                          color: "#22D3EE",
+                          background: "rgba(34, 211, 238, 0.16)",
+                        }}
+                      >
+                        <BlockIcon fontSize="small" />
+                      </Box>
+                    </Stack>
+
+                    <Box>
+                      <Typography variant="h6" sx={{ fontWeight: 800, mb: 0.5, color: "#F8FAFC" }}>
+                        {block.title}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontWeight: 700,
+                          lineHeight: 1.3,
+                          color: "#E2E8F0",
+                          mb: 1,
+                        }}
+                      >
+                        {block.headline}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          color: "rgba(226, 232, 240, 0.86)",
+                          lineHeight: 1.55,
+                          fontSize: "0.95rem",
+                        }}
+                      >
+                        {block.description}
+                      </Typography>
+                    </Box>
+
                     <Chip
-                      label={block.etapa}
+                      label={block.badge}
                       size="small"
                       sx={{
+                        width: "fit-content",
                         fontWeight: 700,
-                        color: "#0F172A",
-                        backgroundColor: "#A5F3FC",
+                        border: "1px solid rgba(34, 211, 238, 0.4)",
+                        color: "#67E8F9",
+                        backgroundColor: "rgba(8, 47, 73, 0.4)",
                       }}
                     />
-                    <Box
-                      sx={{
-                        width: 38,
-                        height: 38,
-                        borderRadius: "50%",
-                        display: "grid",
-                        placeItems: "center",
-                        color: "#22D3EE",
-                        background: "rgba(34, 211, 238, 0.16)",
-                      }}
-                    >
-                      <BlockIcon fontSize="small" />
-                    </Box>
-                  </Stack>
 
-                  <Box>
-                    <Typography
-                      variant="h6"
-                      sx={{ fontWeight: 800, mb: 0.5, color: "#F8FAFC" }}
-                    >
-                      {block.title}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        fontWeight: 700,
-                        lineHeight: 1.3,
-                        color: "#E2E8F0",
-                        mb: 1,
-                      }}
-                    >
-                      {block.headline}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        color: "rgba(226, 232, 240, 0.86)",
-                        lineHeight: 1.55,
-                        fontSize: "0.95rem",
-                      }}
-                    >
-                      {block.description}
-                    </Typography>
+                    <Divider sx={{ borderColor: "rgba(148,163,184,0.2)" }} />
+
+                    <Stack spacing={1.3}>
+                      {block.metrics.map((metric) => {
+                        const MetricIcon = metric.icon;
+                        return (
+                          <Stack
+                            key={`${block.key}-${metric.area}`}
+                            direction="row"
+                            spacing={1.2}
+                            alignItems="flex-start"
+                          >
+                            <MetricIcon
+                              sx={{
+                                mt: "2px",
+                                fontSize: 18,
+                                color: theme.palette.mode === "dark" ? "#7DD3FC" : "#0284C7",
+                              }}
+                            />
+                            <Typography
+                              sx={{
+                                color: "#CBD5E1",
+                                lineHeight: 1.45,
+                                fontSize: "0.92rem",
+                              }}
+                            >
+                              <Box component="span" sx={{ color: "#F1F5F9", fontWeight: 700 }}>
+                                {metric.area}:{" "}
+                              </Box>
+                              {metric.result}
+                            </Typography>
+                          </Stack>
+                        );
+                      })}
+                    </Stack>
                   </Box>
 
-                  <Chip
-                    label={block.badge}
-                    size="small"
-                    sx={{
-                      width: "fit-content",
-                      fontWeight: 700,
-                      border: "1px solid rgba(34, 211, 238, 0.4)",
-                      color: "#67E8F9",
-                      backgroundColor: "rgba(8, 47, 73, 0.4)",
-                    }}
-                  />
-
-                  <Divider sx={{ borderColor: "rgba(148,163,184,0.2)" }} />
-
-                  <Stack spacing={1.3}>
-                    {block.metrics.map((metric) => {
-                      const MetricIcon = metric.icon;
-
-                      return (
-                        <Stack
-                          key={`${block.key}-${metric.area}`}
-                          direction="row"
-                          spacing={1.2}
-                          alignItems="flex-start"
-                        >
-                          <MetricIcon
-                            sx={{
-                              mt: "2px",
-                              fontSize: 18,
-                              color:
-                                theme.palette.mode === "dark"
-                                  ? "#7DD3FC"
-                                  : "#0284C7",
-                            }}
-                          />
-                          <Typography
-                            sx={{
-                              color: "#CBD5E1",
-                              lineHeight: 1.45,
-                              fontSize: "0.92rem",
-                            }}
-                          >
-                            <Box
-                              component="span"
-                              sx={{ color: "#F1F5F9", fontWeight: 700 }}
-                            >
-                              {metric.area}: 
-                            </Box>
-                            {metric.result}
-                          </Typography>
-                        </Stack>
-                      );
-                    })}
-                  </Stack>
+                  {/* SETA ENTRE CARDS (somente desktop) */}
+                  {index < journeyBlocks.length - 1 && (
+                    <Box
+                      sx={{
+                        display: { xs: "none", lg: "grid" },
+                        placeItems: "center",
+                        px: 0.5,
+                      }}
+                    >
+                      <ArrowForwardRounded
+                        sx={{
+                          color: "#7DD3FC",
+                          fontSize: 36,
+                          animation: "arrowPulse 1.4s ease-in-out infinite",
+                          animationDelay: `${index * 0.15}s`,
+                          filter: "drop-shadow(0 0 10px rgba(56,189,248,.35))",
+                        }}
+                      />
+                    </Box>
+                  )}
                 </Box>
-              </Grid>
-            );
-          })}
-        </Grid>
+              );
+            })}
+          </Box>
       </Box>
     </Box>
   );
