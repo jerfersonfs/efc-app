@@ -159,6 +159,7 @@ export default function Preview() {
   return (
     <Box
       sx={{
+        minHeight:"100vh",
         py: 10,
         px: 4,
         background: "#020617",

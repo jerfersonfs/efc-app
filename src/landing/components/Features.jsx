@@ -4,8 +4,7 @@ import {
   Grid,
   Stack,
   Chip,
-  Divider,
-  useTheme,
+  Divider
 } from "@mui/material";
 import {
   EventNoteRounded,
@@ -102,10 +101,10 @@ const journeyBlocks = [
 ];
 
 export default function Features() {
-  const theme = useTheme();
   return (
      <Box
       sx={{
+        minHeight:"100vh",
         py: { xs: 8, md: 10 },
         px: { xs: 2, sm: 3, md: 4 },
         background:
@@ -254,7 +253,7 @@ export default function Features() {
                               sx={{
                                 mt: "2px",
                                 fontSize: 18,
-                                color: theme.palette.mode === "dark" ? "#7DD3FC" : "#0284C7",
+                                color: "#0284C7",
                               }}
                             />
                             <Typography
