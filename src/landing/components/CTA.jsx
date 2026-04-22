@@ -1,6 +1,7 @@
 import { Box, Typography, Button, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../routes/routes";
+import run from "../../assets/run_byIA.png"
 
 export default function CTA() {
   const navigate = useNavigate();
@@ -14,7 +15,20 @@ export default function CTA() {
         py: { xs: 8, md: 10 },
         px: 2,
         textAlign: "center",
-        background: "linear-gradient(180deg, #020617 0%, #0f172a 100%)",
+        backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.61), rgba(2, 6, 23, 0.45)), url(${run})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+
+        display: "flex",
+        alignItems: "center",
+
+        px: {
+          xs: 2,
+          sm: 4,
+          md: 8,
+          lg: 10,
+        },
         color: "white",
       }}
     >

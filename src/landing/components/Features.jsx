@@ -15,17 +15,17 @@ import {
   RepeatRounded,
   ArrowForwardRounded
 } from "@mui/icons-material";
+import img from "../../assets/work_byIA.png"
 
 const journeyBlocks = [
   {
     key: "planejar",
-    etapa: "Etapa 1",
     title: "Planejar",
     headline: "Defina o que importa em minutos",
     description:
       "Transforme metas amplas em ações claras para começar com foco já no primeiro dia.",
     icon: EventNoteRounded,
-    badge: "+40% de clareza nas prioridades",
+    badge: "Mais clareza em suas prioridades",
     metrics: [
       {
         icon: CheckCircleRounded,
@@ -46,7 +46,6 @@ const journeyBlocks = [
   },
   {
     key: "executar",
-    etapa: "Etapa 2",
     title: "Executar",
     headline: "Mantenha ritmo sem perder consistência",
     description:
@@ -73,7 +72,6 @@ const journeyBlocks = [
   },
   {
     key: "acompanhar",
-    etapa: "Etapa 3",
     title: "Acompanhar",
     headline: "Meça evolução com indicadores objetivos",
     description:
@@ -107,9 +105,23 @@ export default function Features() {
         minHeight:"100vh",
         py: { xs: 8, md: 10 },
         px: { xs: 2, sm: 3, md: 4 },
-        background:
-          "radial-gradient(circle at top, #0b1226 0%, #050914 50%, #020617 100%)",
+        backgroundImage:
+          `linear-gradient(rgba(2, 6, 23, 0.93), rgba(2, 6, 23, 0.45)), url(${img})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+
+        display: "flex",
+        alignItems: "center",
+
+        px: {
+          xs: 2,
+          sm: 4,
+          md: 8,
+          lg: 10,
+        },
         color: "#F8FAFC",
+
       }}
     >
       <Box sx={{ maxWidth: 1200, mx: "auto" }}>
@@ -161,10 +173,10 @@ export default function Features() {
                     sx={{
                       height: "100%",
                       p: { xs: 3, md: 3.5 },
-                      borderRadius: 4,
-                      background: "rgba(15, 23, 42, 0.78)",
-                      border: "1px solid rgba(148, 163, 184, 0.24)",
-                      boxShadow: "0 12px 28px rgba(2, 6, 23, 0.35)",
+                      borderRadius: 5,
+                      background: "rgba(32, 38, 53, 0.78)", // nova cor dos cards
+                      border: "2px solid rgba(49, 109, 194, 0.13)",
+                      boxShadow: "0 12px 28px rgba(123, 147, 255, 0.21)",
                       display: "flex",
                       flexDirection: "column",
                       gap: 2,
@@ -176,15 +188,17 @@ export default function Features() {
                       alignItems="center"
                       spacing={1.5}
                     >
-                      <Chip
-                        label={block.etapa}
-                        size="small"
-                        sx={{
-                          fontWeight: 700,
-                          color: "#0F172A",
-                          backgroundColor: "#A5F3FC",
-                        }}
-                      />
+                    <Typography variant="h6" sx={{ 
+                      fontWeight: 800,
+                      mb: 0.5,
+                      color:"#f0eded",
+                      backgroundColor: "#a5f3fc1f",
+                      boxShadow: "0 1px 5px rgba(123, 147, 255, 0.35)",
+                      p: 1,
+                      borderRadius: 3
+                    }}>
+                        {block.title}
+                    </Typography>
                       <Box
                         sx={{
                           width: 38,
@@ -201,19 +215,6 @@ export default function Features() {
                     </Stack>
 
                     <Box>
-                      <Typography variant="h6" sx={{ fontWeight: 800, mb: 0.5, color: "#F8FAFC" }}>
-                        {block.title}
-                      </Typography>
-                      <Typography
-                        sx={{
-                          fontWeight: 700,
-                          lineHeight: 1.3,
-                          color: "#E2E8F0",
-                          mb: 1,
-                        }}
-                      >
-                        {block.headline}
-                      </Typography>
                       <Typography
                         sx={{
                           color: "rgba(226, 232, 240, 0.86)",
@@ -236,42 +237,7 @@ export default function Features() {
                         backgroundColor: "rgba(8, 47, 73, 0.4)",
                       }}
                     />
-
-                    <Divider sx={{ borderColor: "rgba(148,163,184,0.2)" }} />
-
-                    <Stack spacing={1.3}>
-                      {block.metrics.map((metric) => {
-                        const MetricIcon = metric.icon;
-                        return (
-                          <Stack
-                            key={`${block.key}-${metric.area}`}
-                            direction="row"
-                            spacing={1.2}
-                            alignItems="flex-start"
-                          >
-                            <MetricIcon
-                              sx={{
-                                mt: "2px",
-                                fontSize: 18,
-                                color: "#0284C7",
-                              }}
-                            />
-                            <Typography
-                              sx={{
-                                color: "#CBD5E1",
-                                lineHeight: 1.45,
-                                fontSize: "0.92rem",
-                              }}
-                            >
-                              <Box component="span" sx={{ color: "#F1F5F9", fontWeight: 700 }}>
-                                {metric.area}:{" "}
-                              </Box>
-                              {metric.result}
-                            </Typography>
-                          </Stack>
-                        );
-                      })}
-                    </Stack>
+                   
                   </Box>
 
                   {/* SETA ENTRE CARDS (somente desktop) */}

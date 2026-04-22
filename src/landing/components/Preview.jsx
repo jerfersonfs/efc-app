@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import IconLibary from "../../components/IconLibary/IconLibary";
+import mob from "../../assets/mobile_byIA.png"
 
 const previewItems = [
   {
@@ -35,24 +36,6 @@ const previewItems = [
     balanceVariation: "+12,4%",
     trend: "up",
     height: 220,
-  },
-  {
-    type: "habit",
-    title: "Hábito diário",
-    subtitle: "Planejamento matinal",
-    note: "Você completou 5 de 7 dias nesta semana.",
-    statusLabel: "Em evolução",
-    checked: false,
-    height: 196,
-  },
-  {
-    type: "weekly",
-    title: "Atividade semanal",
-    subtitle: "Revisão de metas",
-    note: "Faltam 2 revisões para fechar a semana no alvo.",
-    progress: 40,
-    progressLabel: "2 de 5 revisões",
-    height: 210,
   },
 ];
 
@@ -162,7 +145,20 @@ export default function Preview() {
         minHeight:"100vh",
         py: 10,
         px: 4,
-        background: "#020617",
+        backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.93), rgba(2, 6, 23, 0.45)), url(${mob})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+
+        display: "flex",
+        alignItems: "center",
+
+        px: {
+          xs: 2,
+          sm: 4,
+          md: 8,
+          lg: 10,
+        },
         color: "white",
         '@keyframes previewStagger': {
           from: { opacity: 0, transform: "translateY(14px)" },
@@ -192,3 +188,128 @@ export default function Preview() {
     </Box>
   );
 }
+
+{/*
+  ### FUTURA PREVIEW ####
+  const previewColumns = [
+  [
+    {
+      title: "Hábito concluído",
+      value: "Leitura • 20 min",
+      meta: "+12 dias de sequência",
+      tone: "#22c55e",
+      height: 148,
+    },
+    {
+      title: "Resumo da semana",
+      value: "18 tarefas finalizadas",
+      meta: "+22% vs semana anterior",
+      tone: "#38bdf8",
+      height: 190,
+    },
+  ],
+  [
+    {
+      title: "Tarefa do dia",
+      value: "Planejar orçamento de abril",
+      meta: "Prazo: hoje • 17:00",
+      tone: "#f59e0b",
+      height: 182,
+    },
+    {
+      title: "Foco de hábitos",
+      value: "Treino + hidratação",
+      meta: "2 de 3 metas concluídas",
+      tone: "#a78bfa",
+      height: 160,
+    },
+    {
+      title: "Saldo mensal",
+      value: "R$ 2.430,00",
+      meta: "Receitas R$ 6.100 • Gastos R$ 3.670",
+      tone: "#14b8a6",
+      height: 140,
+    },
+  ],
+  [
+    {
+      title: "Meta financeira",
+      value: "Reserva de emergência",
+      meta: "76% concluída",
+      tone: "#0ea5e9",
+      height: 172,
+    },
+    {
+      title: "Rotina da manhã",
+      value: "4 hábitos em sequência",
+      meta: "Consistência de 91%",
+      tone: "#ec4899",
+      height: 168,
+    },
+  ],
+];
+
+
+  <Box
+          sx={{
+            borderRadius: 4,
+            overflow: "hidden",
+            boxShadow: "0 20px 60px rgba(0,0,0,0.45)",
+            border: "1px solid rgba(255,255,255,0.1)",
+            background: "linear-gradient(135deg, #111827, #0f172a)",
+            p: { xs: 2, md: 2.5 },
+            animation: "fadeSlideUp 900ms ease-out 150ms both",
+          }}
+        >
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: { xs: "1fr", sm: "repeat(2, minmax(0, 1fr))", lg: "repeat(3, minmax(0, 1fr))" },
+              gap: 1.5,
+            }}
+          >
+                       {previewColumns.map((column, columnIndex) => (
+              <Stack
+                key={columnIndex}
+                spacing={1.5}
+                sx={{
+                  display: { xs: columnIndex === 0 ? "flex" : "none", sm: columnIndex === 2 ? "none" : "flex", lg: "flex" },
+                }}
+              >
+                {column.map((card) => (
+                  <Box
+                    key={card.title}
+                    sx={{
+                      minHeight: card.height,
+                      p: 2,
+                      borderRadius: 2.5,
+                      background: "rgba(15,23,42,0.88)",
+                      border: "1px solid rgba(148,163,184,0.2)",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                      transition: "transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease",
+                      willChange: "transform",
+                      "&:hover": {
+                        transform: "translateY(-4px)",
+                        boxShadow: "0 12px 24px rgba(2,6,23,0.35)",
+                        borderColor: "rgba(56,189,248,0.35)",
+                      },
+                    }}
+                  >
+                    <Typography variant="caption" sx={{ color: "rgba(226,232,240,0.9)", mb: 1 }}>
+                      {card.title}
+                    </Typography>
+                    <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 0.75 }}>
+                      {card.value}
+                    </Typography>
+                    <Typography variant="caption" sx={{ color: card.tone, fontWeight: 600 }}>
+                      {card.meta}
+                    </Typography>
+                  </Box>
+                ))}
+              </Stack>
+            ))}
+          </Box>
+        </Box>
+*/}
