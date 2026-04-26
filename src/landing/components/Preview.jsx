@@ -142,7 +142,9 @@ export default function Preview() {
   return (
     <Box
       sx={{
-        minHeight:"100vh",
+        minHeight: "100%",
+        height:"100%",
+        boxSizing:"border-box",
         py: 10,
         px: 4,
         backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.93), rgba(2, 6, 23, 0.45)), url(${mob})`,

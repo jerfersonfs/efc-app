@@ -171,7 +171,9 @@ export default function Features() {
                   {/* CARD */}
                   <Box
                     sx={{
-                      height: "100%",
+                      minHeight: "100%",
+                      height:"100%",
+                      boxSizing:"border-box",
                       p: { xs: 3, md: 3.5 },
                       borderRadius: 5,
                       background: "rgba(32, 38, 53, 0.78)", // nova cor dos cards
@@ -187,31 +189,34 @@ export default function Features() {
                       justifyContent="space-between"
                       alignItems="center"
                       spacing={1.5}
+                      sx={{
+                        animation: "fadeSlideUp 700ms ease-out both", 
+                      }}
                     >
-                    <Typography variant="h6" sx={{ 
-                      fontWeight: 800,
-                      mb: 0.5,
-                      color:"#f0eded",
-                      backgroundColor: "#a5f3fc1f",
-                      boxShadow: "0 1px 5px rgba(123, 147, 255, 0.35)",
-                      p: 1,
-                      borderRadius: 3
-                    }}>
-                        {block.title}
-                    </Typography>
-                      <Box
-                        sx={{
-                          width: 38,
-                          height: 38,
-                          borderRadius: "50%",
-                          display: "grid",
-                          placeItems: "center",
-                          color: "#22D3EE",
-                          background: "rgba(34, 211, 238, 0.16)",
-                        }}
-                      >
-                        <BlockIcon fontSize="small" />
-                      </Box>
+                      <Typography variant="h6" sx={{ 
+                        fontWeight: 800,
+                        mb: 0.5,
+                        color:"#f0eded",
+                        backgroundColor: "#a5f3fc1f",
+                        boxShadow: "0 1px 5px rgba(123, 147, 255, 0.35)",
+                        p: 1,
+                        borderRadius: 3
+                      }}>
+                          {block.title}
+                      </Typography>
+                        <Box
+                          sx={{
+                            width: 38,
+                            height: 38,
+                            borderRadius: "50%",
+                            display: "grid",
+                            placeItems: "center",
+                            color: "#22D3EE",
+                            background: "rgba(34, 211, 238, 0.16)",
+                          }}
+                        >
+                          <BlockIcon fontSize="small" />
+                        </Box>
                     </Stack>
 
                     <Box>

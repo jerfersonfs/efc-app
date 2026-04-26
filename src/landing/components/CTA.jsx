@@ -9,7 +9,9 @@ export default function CTA() {
   return (
     <Box
       sx={{
-        minHeight:"100vh",
+        minHeight: "100%",
+        height:"100%",
+        boxSizing:"border-box",
         overflowX: "hidden",
         width: "100%",
         py: { xs: 8, md: 10 },

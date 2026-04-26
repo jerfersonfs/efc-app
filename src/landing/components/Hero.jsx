@@ -19,11 +19,13 @@ export default function Hero() {
     >
         <Box
           sx={{
-            minHeight: "100vh",
+            minHeight: "100%",
+            height:"100%",
+            boxSizing:"border-box",
             display: "flex",
             alignItems: "center",
             py: { xs: 8, md: 3 },
-            backgroundImage:`linear-gradient(rgba(2, 6, 23, 0.61), rgba(2, 6, 23, 0.45)), url(${bg})`,
+            backgroundImage:`linear-gradient(rgba(2, 6, 23, 0.93), rgba(2, 6, 23, 0.45)), url(${bg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
