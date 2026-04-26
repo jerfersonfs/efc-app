@@ -99,7 +99,7 @@ const journeyBlocks = [
 ];
 
 export default function Features() {
-  return (
+  return ( 
      <Box
       sx={{
         minHeight:"100vh",

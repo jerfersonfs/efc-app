@@ -17,7 +17,7 @@ export default function CTA() {
         py: { xs: 8, md: 10 },
         px: 2,
         textAlign: "center",
-        backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.61), rgba(2, 6, 23, 0.45)), url(${run})`,
+        backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.93), rgba(2, 6, 23, 0.45)), url(${run})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

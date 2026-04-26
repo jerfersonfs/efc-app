@@ -2,21 +2,12 @@ import { Box, Typography, Button, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../routes/routes";
 import bg from "../../assets/landing_byIA.png"
-import { motion } from "framer-motion";
+
 
 export default function Hero() {
   const navigate = useNavigate();
 
   return (
-    <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ amount: 0.6 }} // 🔥 entra quando 60% visível
-        transition={{
-          duration: 0.6,
-          ease: [0.22, 1, 0.36, 1],
-        }}
-    >
         <Box
           sx={{
             minHeight: "100%",
@@ -123,6 +114,5 @@ export default function Hero() {
           
           </Box>
         </Box>
-    </motion.div>
   );
 }
